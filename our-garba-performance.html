@@ -1,0 +1,374 @@
+<!-- This is a copy of the original file with a URL-safe name. -->
+<!-- If you make changes, update both files or remove the old one if not needed. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Garba Performance - Jay Ambe Seva Kendra USA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2d044d 0%, #111827 60%, #fde68a 100%);
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .mystic-text {
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.7),
+                         0 0 20px rgba(75, 0, 130, 0.5),
+                         0 0 30px rgba(148, 0, 211, 0.3);
+        }
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #9d00ff, 0 0 20px #9d00ff;
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+            }
+        }
+        .card {
+            backdrop-filter: blur(10px);
+            background: rgba(20, 20, 40, 0.7);
+            border: 1.5px solid #9d00ff;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.2);
+        }
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 30px #fde68a;
+            border: 1.5px solid #fde68a;
+        }
+        .section-title {
+            color: #fde68a;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .btn-mystic {
+            background: linear-gradient(45deg, #9d00ff, #5e00a8);
+            color: #fff;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px #9d00ff33;
+        }
+        .btn-mystic:hover {
+            background: linear-gradient(45deg, #fde68a, #9d00ff);
+            color: #4c1d95;
+            box-shadow: 0 5px 15px #fde68a99;
+        }
+        .gallery-img {
+            border: 3px solid #fde68a;
+            box-shadow: 0 4px 16px #9d00ff;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 32px #fde68a;
+        }
+        .garba-pdf-card {
+            background: linear-gradient(135deg, #2d044d 0%, #111827 60%, #fde68a 100%);
+            border: 4px solid #fde68a;
+            box-shadow: 0 10px 30px rgba(157, 0, 255, 0.2);
+        }
+        /* Festive Orbs */
+        .orb {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: rgba(157, 0, 255, 0.7);
+            box-shadow: 0 0 18px 4px rgba(157, 0, 255, 0.7);
+            animation: float 15s infinite ease-in-out;
+            z-index: 1;
+        }
+        @keyframes float {
+            0% { transform: translate(0, 0); opacity: 0; }
+            50% { transform: translate(100px, -50px); opacity: 1; }
+            100% { transform: translate(200px, 0); opacity: 0; }
+        }
+        /* Responsive tweaks */
+        @media (max-width: 767px) {
+            body {
+                background: linear-gradient(135deg, #2d044d 0%, #111827 70%, #fde68a 100%) !important;
+            }
+            .card {
+                padding: 1.25rem !important;
+                margin-bottom: 1rem;
+                background: rgba(20, 20, 40, 0.92) !important;
+                border: 1.5px solid #9d00ff !important;
+                box-shadow: 0 5px 15px #9d00ff33 !important;
+            }
+            .card:hover {
+                box-shadow: 0 10px 30px #fde68a99 !important;
+                border: 1.5px solid #fde68a !important;
+            }
+            .btn-mystic {
+                font-size: 1.1rem !important;
+                padding: 0.7rem 1.5rem !important;
+                border-radius: 9999px !important;
+                width: 100%;
+                margin: 0.25rem 0 !important;
+            }
+            .gallery-img {
+                height: 160px !important;
+                border-width: 2.5px !important;
+            }
+            .garba-pdf-card {
+                padding: 1.5rem !important;
+                border-width: 3px !important;
+            }
+            nav {
+                padding: 0.5rem 0.25rem !important;
+                border-radius: 0 0 1.5rem 1.5rem !important;
+                font-size: 1.1rem !important;
+            }
+            .section-title, h2, h1 {
+                font-size: 1.5rem !important;
+            }
+            .mystic-text, .glow {
+                text-shadow: 0 0 8px #9d00ff, 0 0 16px #fde68a;
+            }
+        }
+        /* Desktop nav button size and style */
+        @media (min-width: 768px) {
+            nav .btn-mystic {
+                padding: 10px 24px !important;
+                border-radius: 24px !important;
+                min-width: unset !important;
+                min-height: unset !important;
+                font-size: 1.1rem !important;
+                margin: 0 0.25rem !important;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-900 via-gray-900 to-yellow-900 min-h-screen font-sans relative">
+    <!-- Video Background (covers all sections) -->
+    <video id="bgVideo" autoplay loop muted playsinline class="fixed top-0 left-0 w-full h-full object-cover z-[-2]" style="min-width:100vw; min-height:100vh; max-width:none; max-height:none; pointer-events:none;"><source src="back-ground.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+    <!-- Overlay for readability -->
+    <div id="bgOverlay" class="fixed top-0 left-0 w-full h-full z-[-1] pointer-events-none" style="background:rgba(20,20,40,0.65);"></div>
+    <!-- Decorative Orbs for Festive Look -->
+    <div class="orb" style="top: 15%; left: 8%; animation-delay: 0s;"></div>
+    <div class="orb" style="top: 70%; left: 18%; animation-delay: 2s;"></div>
+    <div class="orb" style="top: 30%; left: 85%; animation-delay: 4s;"></div>
+    <div class="orb" style="top: 60%; left: 65%; animation-delay: 6s;"></div>
+    <nav class="w-full text-center py-4 z-50 bg-gradient-to-r from-purple-900/90 via-gray-900/90 to-yellow-900/80 shadow-xl rounded-b-2xl backdrop-blur-md">
+        <a href="jay ambe seva wehbsite.html" class="btn-mystic px-6 py-2 rounded-full font-semibold mx-2">Home</a>
+        <a href="jay ambe seva wehbsite.html" class="btn-mystic px-6 py-2 rounded-full font-semibold mx-2">About Us</a>
+        <a href="jay ambe seva wehbsite.html" class="btn-mystic px-6 py-2 rounded-full font-semibold mx-2" onclick="window.location.href='jay ambe seva wehbsite.html#services-section'; return false;">Our Services</a>
+        <a href="" class="btn-mystic px-6 py-2 rounded-full font-semibold mx-2">Our Garba Performance</a>
+    </nav>
+    <main class="flex-1 flex flex-col items-center justify-center px-4 py-12">
+        <!-- Add button at the top -->
+    
+        <!-- Garba Performance Hero Section -->
+        <section class="w-full flex flex-col items-center mb-16">
+            <div class="w-full max-w-3xl mx-auto text-center py-12 px-4 rounded-2xl shadow-2xl bg-gradient-to-br from-purple-900 via-gray-900 to-yellow-900 border-4 border-yellow-300 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-24 h-24 bg-purple-700 rounded-full opacity-30 blur-2xl animate-pulse" style="z-index:0;"></div>
+                <div class="absolute bottom-0 right-0 w-32 h-32 bg-yellow-300 rounded-full opacity-20 blur-2xl animate-pulse" style="z-index:0;"></div>
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4 text-yellow-200 drop-shadow-lg mystic-text glow relative z-10">Our Garba Performance</h1>
+                <p class="text-xl text-purple-200 mb-6 relative z-10">Experience the vibrant energy and devotion of our Garba nights!</p>
+                <div class="flex flex-wrap justify-center gap-4 mb-4 relative z-10">
+                    <a href="#garba-videos" class="btn-mystic text-white px-8 py-3 rounded-full font-semibold shadow-lg">Watch Videos</a>
+                </div>
+            </div>
+        </section>
+        <!-- Event Highlights Section -->
+        <section class="w-full flex flex-col items-center mb-12">
+            <h2 class="text-3xl font-bold mb-8 mystic-text glow">Event Highlights</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 w-full max-w-5xl">
+                <div class="card p-8 rounded-xl text-center bg-gradient-to-br from-purple-900 via-gray-900 to-yellow-900 border border-yellow-300">
+                    <div class="text-5xl mb-4 text-purple-400">🎤</div>
+                    <h3 class="text-2xl font-bold mb-3 text-yellow-200">Live Music</h3>
+                    <p class="text-gray-200">Enjoy authentic Garba with talented singers and musicians from Gujarat.</p>
+                </div>
+                <div class="card p-8 rounded-xl text-center bg-gradient-to-br from-purple-900 via-gray-900 to-yellow-900 border border-yellow-300">
+                    <div class="text-5xl mb-4 text-purple-400">👗</div>
+                    <h3 class="text-2xl font-bold mb-3 text-yellow-200">Traditional Attire</h3>
+                    <p class="text-gray-200">Dress up in vibrant, traditional Garba outfits and join the celebration.</p>
+                </div>
+                <div class="card p-8 rounded-xl text-center bg-gradient-to-br from-purple-900 via-gray-900 to-yellow-900 border border-yellow-300">
+                    <div class="text-5xl mb-4 text-purple-400">💃</div>
+                    <h3 class="text-2xl font-bold mb-3 text-yellow-200">Community Dance</h3>
+                    <p class="text-gray-200">Dance in unity and devotion with fellow devotees of all ages.</p>
+                </div>
+                <div class="card p-8 rounded-xl text-center bg-gradient-to-br from-purple-900 via-gray-900 to-yellow-900 border border-yellow-300">
+                    <div class="text-5xl mb-4 text-purple-400">🙏</div>
+                    <h3 class="text-2xl font-bold mb-3 text-yellow-200">Blessings & Prasad</h3>
+                    <p class="text-gray-200">Receive blessings and prasad in a spiritually uplifting environment.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Garba Performance Videos Section -->
+        <section id="garba-videos" class="w-full flex flex-col items-center mb-12">
+            <!-- View Our Photo Gallery button -->
+          
+            <div class="w-full max-w-2xl mx-auto bg-gradient-to-br from-purple-900/80 via-gray-900/80 to-yellow-900/40 rounded-2xl shadow-2xl border border-purple-700/40 p-6 md:p-10">
+                <h2 class="text-2xl font-bold mb-6 section-title text-yellow-200">Garba Performance Videos</h2>
+                <div class="flex flex-col gap-8 justify-center items-center">
+                    <!-- Second Garba Video -->
+                    <div class="flex-1 flex flex-col items-center">
+                        <video id="garba2Video" controls poster="" class="w-full rounded-xl shadow-lg border-4 border-yellow-300 bg-black mb-2" preload="metadata">
+                            <source src="garba-2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="mt-2 text-center text-yellow-200 font-semibold">HOW OUR CAMP LOOK 7 YEAR AGO </p>
+                    </div>
+                    <!-- Our Garba Videos Container -->
+                    <div class="w-full flex flex-col items-center gap-8 p-6 rounded-xl border-4 border-purple-400 bg-gradient-to-br from-purple-900/70 via-gray-900/70 to-yellow-900/40 shadow-lg" style="margin-top:1.5rem;">
+                        <h3 class="text-xl font-bold text-yellow-200 mb-2">Our Garba Videos</h3>
+                        <!-- Garba Live Video -->
+                        <div class="flex-1 flex flex-col items-center w-full">
+                            <video controls poster="" class="w-full rounded-xl shadow-lg border-4 border-yellow-300 bg-black mb-2" preload="metadata">
+                                <source src="garba-live 1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p class="mt-2 text-center text-yellow-200 font-semibold">OUR GARBA LIVE VIDEO</p>
+                        </div>
+                        <!-- Vinay Nayak Video -->
+                        <div class="flex-1 flex flex-col items-center w-full">
+                            <video controls poster="" class="w-full rounded-xl shadow-lg border-4 border-yellow-300 bg-black mb-2" preload="metadata">
+                                <source src="vinay-nayak.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p class="mt-2 text-center text-yellow-200 font-semibold">VINAY NAYAK IN OUR CAMP</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="videoErrorMsg" style="display:none;color:#ff4444;text-align:center;font-weight:bold;">Video failed to load!<br>Check that <b>garba1.mp4</b> and <b>garba-2.mp4</b> are in the same folder as this HTML file and are valid MP4 (H.264/AAC).<br>Try playing them in your desktop video player.<br>If you see this message, the browser could not load the video file.</div>
+            </div>
+        </section>
+        <!-- Photo Gallery Section -->
+        <section class="w-full flex flex-col items-center">
+            <!-- View Our Photo Gallery button -->
+            <h2 class="text-2xl font-bold mb-6 section-title text-yellow-200">Photo Gallery</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
+                <div class="relative flex flex-col items-center">
+                    <video id="galleryGarbaVideo" controls poster="" class="gallery-img rounded-xl object-cover h-64 w-full border-4 border-yellow-300 bg-black">
+                        <source src="garba1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="mt-2 text-center text-yellow-200 font-semibold">PUBLIC CRAZY</p>
+                </div>
+                <!-- Garba 2: Add image and label as 'stage' -->
+                <div class="relative flex flex-col items-center">
+                    <img src="garba 2.jpg" alt="Garba 2" class="gallery-img rounded-xl object-cover h-64 w-full border-4 border-yellow-300">
+                    <p class="mt-2 text-center text-yellow-200 font-semibold">STAGE</p>
+                </div>
+                <!-- Garba 3: Add video and label as 'stage view from public' -->
+                <div class="relative flex flex-col items-center">
+                    <video id="galleryGarbaVideo3" controls poster="" class="gallery-img rounded-xl object-cover h-64 w-full border-4 border-yellow-300 bg-black">
+                        <source src="garba 3 .mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="mt-2 text-center text-yellow-200 font-semibold">STAGE VIEW FROM PUBLIC</p>
+                </div>
+            </div>
+            <script>
+            // Pause other videos when one is played
+            document.addEventListener('DOMContentLoaded', function() {
+                const videos = document.querySelectorAll('video');
+                videos.forEach(video => {
+                    video.addEventListener('play', function() {
+                        videos.forEach(v => {
+                            if (v !== video) {
+                                v.pause();
+                            }
+                        });
+                    });
+                });
+            });
+            </script>
+        </section>
+        <!-- Our Photos About Camp Section (container style) -->
+        <section id="our-photos-about-camp" class="w-full flex flex-col items-center mb-12">
+        </section>
+    </main>
+    <!-- Modal for photo gallery (reusable for both pages) -->
+    <div id="photoGalleryModal" style="display:none;" class="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center">
+        <div class="bg-white rounded-xl shadow-lg p-8 max-w-2xl w-full text-center relative" style="position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); max-height:90vh; overflow-y:auto;">
+            <button onclick="closePhotoGalleryModal()" class="absolute top-2 right-2 text-gray-500 hover:text-purple-700 text-2xl font-bold">&times;</button>
+            <h2 class="text-3xl font-bold mb-6 mystic-text">Our Photos About Camp</h2>
+            <img src="https://i.pinimg.com/originals/d4/80/12/d48012e2625f2e0d4df8153020d54eb7.jpg" alt="Devi" class="mx-auto h-32 w-32 rounded-full border-4 border-yellow-300 shadow-xl mb-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <img src="your-photo1.jpg" alt="Camp Group Photo" class="rounded-lg w-full max-h-56 object-cover mb-2 bg-black" />
+                <img src="your-photo2.jpg" alt="Camp Activity" class="rounded-lg w-full max-h-56 object-cover mb-2 bg-black" />
+                <img src="your-photo3.jpg" alt="Camp Food" class="rounded-lg w-full max-h-56 object-cover mb-2 bg-black" />
+                <!-- Add more images as needed -->
+            </div>
+            <button onclick="closePhotoGalleryModal()" class="btn-mystic text-white px-6 py-2 rounded-full font-semibold mt-6">Close</button>
+        </div>
+    </div>
+   <footer class="bg-gradienslsg t-to-r from-purple-900/90 via-gray-900/80 to-yellow-900/70 py-10 border-t border-yellow-300/30 text-center mt-16 text-yellow-200 space-y-6">
+  <!-- Logo & Copyright -->
+  <div class="space-y-1">
+    <p>&copy; 2025 Jay Ambe Seva Kendra USA. All rights reserved.</p>
+    <p class="text-purple-200 text-sm">Since 2000 • Jay Ambe Seva Kendra USA Camp</p>
+  </div>
+
+  <!-- Designed by -->
+  <div class="text-sm">
+    <p>Designed & code with ❤️ by <strong>Abhi's Development Team by laljiNson's</strong></p>
+    <p>Click below to see Abhi's Projects</p>
+    <a href="abhi.html" class="inline-block mt-2 bg-yellow-300 text-purple-900 font-semibold px-5 py-2 rounded-full hover:bg-yellow-400 transition">
+      🔥 Abhi's Development by laljiNson's
+    </a>
+  </div>
+
+  <!-- Instagram -->
+  <div>
+    <a href="https://www.instagram.com/jay_ambe_seva_kendra_usa_camp" target="_blank" class="inline-flex items-center gap-2 hover:text-yellow-300 transition">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+        <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.25-.88a.88.88 0 1 1 0 1.75.88.88 0 0 1 0-1.75z"/>
+      </svg>
+      Follow us on Instagram
+    </a>
+  </div>
+
+  <!-- Email Support -->
+  <div> 
+    <a href="mailto:jayambesevausacamp.org@gmail.com?subject=Support%20Request" class="inline-block bg-yellow-300 text-purple-900 font-semibold px-5 py-2 rounded-full hover:bg-yellow-400 transition">
+      📧 Need Help? Email Us
+    </a>
+    <p class="mt-2 text-sm text-yellow-100">
+      <span class="underline">jayambesevausacamp.org@gmail.com</span><br>
+      Response time: 1 hour to 5 days<br>
+      Support hours: Monday to Friday
+    12 PM to 5 PM EST and IST 
+   for more information, please visit our <a href="Aibeingdevelop.html" class="text-yellow-300 underline">Ask LaljiNsons</a>.
+    </p>
+  </div>
+ <p> Camp location : Jay Ambe Seva Kendra
+Next to Adarsh ​​Residential School, Danta-Ambaji Road, Danta, Dist. Banaskantha</p></p>
+</div>
+</footer>
+    <script>
+    // ...existing code...
+    function showPhotoGalleryModal() {
+        var modal = document.getElementById('photoGalleryModal');
+        if (modal) {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    function closePhotoGalleryModal() {
+        var modal = document.getElementById('photoGalleryModal');
+        if (modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    }
+    // ...existing code...
+    </script>
+</body>
+</html>
+

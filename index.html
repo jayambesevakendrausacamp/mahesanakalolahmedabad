@@ -1,0 +1,2222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Jay Ambe Seva Kendra USA Camp</title>
+  <!-- ✅ Google SEO Meta Tags -->
+  <meta name="description" content="Official website of Jay Ambe Seva Kendra USA Camp in Danta. View Bhadarvi Poonam camp schedule, seva details, and event updates.">
+  <meta name="keywords" content="Jay Ambe Seva Kendra USA Camp, Danta Camp, Bhadarvi Poonam, Jay Ambe Camp Danta, Jay Ambe USA, Ambaji Poonam Seva, seva camp gujarat, poonam mandir trip">
+  <meta name="author" content="Jay Ambe Seva Kendra USA">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
+
+        /* Utility classes for device-specific content */
+        .mobile-only { display: none; }
+        .desktop-only { display: block; }
+        @media (max-width: 767px) {
+            .mobile-only { display: block !important; }
+            .desktop-only { display: none !important; }
+        }
+        @media (min-width: 768px) {
+            .mobile-only { display: none !important; }
+            .desktop-only { display: block !important; }
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #e0e0e0;
+            overflow-x: hidden; /* Prevents horizontal scroll */
+            margin: 0;
+            padding: 0;
+            perspective: 1000px; /* Add perspective for 3D effect */
+            background-color: #111827; /* Ensure body background matches Vanta for seamless transition */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .mystic-text {
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.7),
+                         0 0 20px rgba(75, 0, 130, 0.5),
+                         0 0 30px rgba(148, 0, 211, 0.3);
+        }
+
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #9d00ff, 0 0 20px #9d00ff;
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+            }
+        }
+
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .portal {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(138,43,226,0.8) 0%, rgba(75,0,130,0.6) 50%, rgba(0,0,0,0) 70%);
+            box-shadow: 0 0 60px rgba(138, 43, 226, 0.6);
+            animation: spin 20s linear infinite, pulse 4s ease-in-out infinite;
+            margin-left: 2rem; /* Add margin to separate from dates on the left */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 60px rgba(138, 43, 226, 0.6); }
+            50% { box-shadow: 0 0 90px rgba(138, 43, 226, 0.9); }
+            100% { box-shadow: 0 0 60px rgba(138, 43, 226, 0.6); }
+        }
+
+        .card {
+            backdrop-filter: blur(10px);
+            background: rgba(20, 20, 40, 0.5);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.2); /* Added default shadow for cards */
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.4);
+            border: 1px solid rgba(138, 43, 226, 0.7);
+        }
+
+        .btn-mystic {
+            background: linear-gradient(45deg, #9d00ff, #5e00a8);
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-mystic:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(191, 186, 194, 0.4);
+        }
+
+        .orb {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(157, 0, 255, 0.7);
+            box-shadow: 0 0 10px 2px rgba(157, 0, 255, 0.7);
+            animation: float 15s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); opacity: 0; }
+            50% { transform: translate(100px, -50px); opacity: 1; }
+            100% { transform: translate(200px, 0); opacity: 0; }
+        }
+
+        .devi-image {
+            width: 180px; /* Increased from 120px */
+            height: 180px; /* Increased from 120px */
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #9d00ff;
+            box-shadow: 0 0 20px rgba(157, 0, 255, 0.7);
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 15px rgba(157, 0, 255, 0.7); }
+            50% { box-shadow: 0 0 30px rgba(157, 0, 255, 0.9); }
+            100% { box-shadow: 0 0 15px rgba(157, 0, 255, 0.7); }
+        }
+
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Responsive font size for main heading */
+        h1.glow {
+            font-size: 3rem; /* Default for mobile (e.g., 48px) */
+        }
+
+        @media (min-width: 768px) { /* Medium screens and up */
+            h1.glow {
+                font-size: 6xl; /* Original size for larger screens */
+            }
+        }
+
+        /* Style for the dates */
+        .event-dates {
+            font-size: 1.5rem; /* Increased font size for prominence */
+            color: #c084fc; /* Tailwind's purple-400 for a lighter purple */
+            font-weight: 600; /* Semi-bold */
+            text-align: right; /* Align text to the right within its flex item */
+            margin-right: 2rem; /* Add margin to separate from portal on the right */
+            white-space: nowrap; /* Prevent dates from wrapping on small screens */
+        }
+
+        /* 25 Year Celebration Message Style */
+        .celebration-message {
+            font-size: 1.75rem; /* text-3xl or custom size */
+            color: #fde68a; /* Tailwind's yellow-200 for a bright, celebratory feel */
+            font-weight: 700; /* Extra bold */
+            text-shadow: 0 0 10px rgba(253, 230, 138, 0.6);
+            margin-bottom: 1.5rem; /* Space below the message */
+            animation: pulse-scale 2s ease-out infinite alternate;
+        }
+
+        @keyframes pulse-scale {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.05); opacity: 1; }
+        }
+
+        /* 3D Transform Styles */
+        .content-sections-wrapper {
+            position: relative; /* All content sections will be absolute within this */
+            width: 100%;
+            height: 100%; /* Will be set by JS or Tailwind to fill available space */
+            overflow: hidden; /* Crucial: Hides content that rotates out */
+            min-height: 100vh; /* Ensure it's tall enough for the flipping content */
+            flex: 1 0 auto;
+        }
+
+        .content-section {
+            position: absolute; /* Essential for stacking sections for the 3D flip */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* Ensure it takes full height of its relative parent */
+            padding-bottom: 3rem; /* Add back bottom padding */
+            padding-left: 1rem; /* Add back left padding */
+            padding-right: 1rem; /* Add back right padding */
+            box-sizing: border-box; /* Include padding in height/width calculation */
+
+            backface-visibility: hidden; /* Prevents back of element from being visible */
+            transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.8s;
+            transform-origin: center center; /* Default is usually center, but explicitly setting it */
+            z-index: 1; /* Default z-index */
+            overflow-y: auto; /* Allows scrolling within a section if content is too long */
+        }
+
+        /* Adjusted padding for the header inside each content section */
+        .content-section header {
+            padding-top: 7rem; /* Increased padding to push content down further */
+            margin-top: 0; /* Ensure no conflicting top margin */
+        }
+
+        /* --- Sacred Observances Timeline Line Adjustment --- */
+        .sacred-observances-timeline .timeline-line {
+            position: absolute;
+            left: 10%; /* Adjust to move it inside/left */
+            height: 100%;
+            width: 1px; /* Keep it thin */
+            background: linear-gradient(to bottom, #9d00ff, #5e00a8); /* Using the mystic gradient */
+            z-index: 0; /* Ensure it's behind the circles and text */
+            transform: translateX(-50%); /* Center the 1px line on its new left position */
+        }
+
+        /* Adjust the circle positions to align with the new line position */
+        .sacred-observances-timeline .timeline-item .timeline-circle {
+            position: absolute;
+            left: 10%; /* Match this to the line's left position */
+            transform: translateX(-50%); /* Center the circle on the line */
+        }
+
+        /* Adjust text and content to ensure they are on the right of the line */
+        .sacred-observances-timeline .timeline-item .timeline-content {
+            margin-left: calc(10% + 2rem); /* Adjust margin to start after the circle and line */
+            padding-left: 0.5rem; /* Add a little padding for separation */
+        }
+
+        /* Reset the original .relative and children styles for the timeline section */
+        .content-section section:last-of-type { /* Targeting the Sacred Observances section */
+            position: relative; /* Keep it relative to position its absolute children */
+        }
+
+        .content-section:not(.active) {
+            opacity: 0;
+            pointer-events: none; /* Disables interaction when hidden */
+            transform: rotateY(-90deg); /* Hidden sections start rotated */
+            z-index: 0; /* Lower z-index for inactive sections */
+        }
+
+        .content-section.active {
+            opacity: 1;
+            pointer-events: auto; /* Enables interaction when active */
+            transform: rotateY(0deg); /* Active section rotates to normal view */
+            z-index: 10; /* Higher z-index for the active section to be on top */
+        }
+
+
+        @media (max-width: 767px) { /* Adjust for smaller screens */
+            .event-dates {
+                font-size: 1.25rem; /* Slightly smaller on very small screens */
+                margin-right: 0; /* Remove margin on small screens */
+                text-align: center; /* Center text on small screens */
+                margin-bottom: 1rem; /* Add space below when stacked */
+            }
+            .portal-and-dates-container {
+                flex-direction: column; /* Stack on small screens */
+            }
+            .portal {
+                margin-left: 0; /* Remove margin on small screens */
+            }
+            .celebration-message {
+                font-size: 1.25rem; /* Smaller on mobile */
+            }
+            /* Adjust header padding for smaller screens if needed */
+            .content-section header {
+                padding-top: 12rem !important; /* Further increased to ensure Devi image is fully visible below nav */
+            }
+
+            /* Timeline adjustments for mobile */
+            .sacred-observances-timeline .timeline-line {
+                left: 20px; /* Fixed pixel value for better control on small screens */
+            }
+            .sacred-observances-timeline .timeline-item .timeline-circle {
+                left: 20px; /* Fixed pixel value */
+            }
+            .sacred-observances-timeline .timeline-item .timeline-content {
+                margin-left: calc(20px + 2rem); /* Adjust margin */
+            }
+        }
+
+        .puja-modal-animate {
+            animation: pujaModalPop 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        @keyframes pujaModalPop {
+            0% {
+                transform: scale(0.7) translate(-50%, -50%);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.1) translate(-50%, -50%);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1) translate(-50%, -50%);
+                opacity: 1;
+            }
+        }
+
+        /* Add this CSS for section fade-in/out effect */
+        .section-fade-in {
+            animation: sectionFadeIn 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: 20 !important;
+        }
+        .section-fade-out {
+            animation: sectionFadeOut 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: 0 !important;
+        }
+        @keyframes sectionFadeIn {
+            0% { opacity: 0; transform: scale(0.96) rotateY(-20deg); }
+            100% { opacity: 1; transform: scale(1) rotateY(0deg); }
+        }
+        @keyframes sectionFadeOut {
+            0% { opacity: 1; transform: scale(1) rotateY(0deg); }
+            100% { opacity: 0; transform: scale(0.96) rotateY(20deg); }
+        }
+
+        /* --- MOBILE IMPROVEMENTS START --- */
+        @media (max-width: 767px) {
+            #mainNav {
+                padding: 0.5rem 0.25rem;
+                z-index: 1000;
+            }
+            #mainNav button,
+            #mainNav a {
+                display: block;
+                width: 100%;
+                margin: 0.25rem 0;
+                font-size: 1rem;
+                border-radius: 9999px;
+            }
+            .content-sections-wrapper {
+                padding-left: 0.25rem !important;
+                padding-right: 0.25rem !important;
+                padding-top: 1rem !important;
+                padding-bottom: 1rem !important;
+            }
+            .content-section header {
+                padding-top: 12rem !important; /* Further increased to ensure Devi image is fully visible below nav */
+            }
+            .card {
+                padding: 1.25rem !important;
+                margin-bottom: 1rem;
+            }
+            .grid.md\:grid-cols-2,
+            .grid.md\:grid-cols-3,
+            .grid.lg\:grid-cols-3 {
+                display: block !important;
+            }
+            .mb-20 {
+                margin-bottom: 1.5rem !important;
+            }
+            .devi-image {
+                width: 120px !important;
+                height: 120px !important;
+            }
+            .event-dates {
+                font-size: 1rem !important;
+                margin-right: 0 !important;
+                text-align: center !important;
+                margin-bottom: 0.5rem !important;
+            }
+            .portal-and-dates-container {
+                flex-direction: column !important;
+                gap: 0.5rem !important;
+            }
+            .portal {
+                margin-left: 0 !important;
+                margin-top: 0.5rem !important;
+            }
+            .timeline-line {
+                left: 16px !important;
+            }
+            .timeline-circle {
+                left: 16px !important;
+            }
+            .timeline-content {
+                margin-left: 2.5rem !important;
+            }
+            .photo-section {
+                padding: 1rem !important;
+            }
+            .text-4xl {
+                font-size: 1.5rem !important;
+            }
+            .text-5xl {
+                font-size: 1.25rem !important;
+            }
+            .text-6xl {
+                font-size: 2rem !important;
+            }
+            .rounded-xl {
+                border-radius: 0.75rem !important;
+            }
+            .py-16 {
+                padding-top: 1.5rem !important;
+                padding-bottom: 1.5rem !important;
+            }
+            .mb-12 {
+                margin-bottom: 1rem !important;
+            }
+            .mb-8 {
+                margin-bottom: 0.75rem !important;
+            }
+            .mb-6 {
+                margin-bottom: 0.5rem !important;
+            }
+            .max-w-xl {
+                max-width: 100% !important;
+            }
+        }
+        /* --- MOBILE IMPROVEMENTS END --- */
+
+        /* Add extra space below nav on mobile */
+        @media (max-width: 767px) {
+            .devi-image {
+                margin-top: 2.5rem !important;
+            }
+            #mainNav {
+                margin-bottom: 1.5rem !important;
+            }
+        }
+
+        /* Mobile navigation improvement: stack buttons and add spacing */
+        @media (max-width: 767px) {
+            #mainNav {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.5rem;
+                padding: 0.5rem 0.25rem;
+            }
+            #mainNav button, #mainNav a {
+                width: 100%;
+                margin: 0;
+                font-size: 1.1rem;
+            }
+        }
+
+        #mainNav {
+            z-index: 1050 !important;
+        }
+        @media (max-width: 767px) {
+            #mainNav button,
+            #mainNav a {
+                pointer-events: auto !important;
+                z-index: 1051 !important;
+            }
+        }
+
+        /* --- MOBILE NAVIGATION MENU --- */
+        @media (max-width: 767px) {
+            #mainNav {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.5rem 1rem;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1050;
+            }
+            #navButtonsMobile {
+                display: none;
+                flex-direction: column;
+                background: rgba(31, 24, 54, 0.98);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                box-shadow: 0 8px 24px rgba(138,43,226,0.15);
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                padding: 0.5rem 0;
+            }
+            #navButtonsMobile.show {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 2rem;
+                color: #fde68a;
+                cursor: pointer;
+                z-index: 1100;
+            }
+        }
+        @media (min-width: 768px) {
+            .hamburger {
+                display: none !important;
+            }
+            #navButtonsDesktop {
+                display: flex !important;
+                flex-direction: row;
+                position: static;
+                background: none;
+                box-shadow: none;
+                border-radius: 0;
+                padding: 0;
+            }
+        }
+
+         NavBar image size adjustments */
+        #mainNav img[alt="Ambe Maa"] {
+            width: 32px !important;
+            height: 32px !important;
+            min-width: 28px;
+            min-height: 28px;
+            margin-right: 0.4rem;
+        }
+        @media (min-width: 768px) {
+            #mainNav img[alt="Ambe Maa"] {
+                width: 40px !important;
+                height: 40px !important;
+            }
+        }
+        @media (max-width: 767px) {
+            #mainNav img[alt="Ambe Maa"] {
+                width: 28px !important;
+                height: 28px !important;
+            }
+            #mainNav .text-lg {
+                font-size: 1rem !important;
+            }
+            #mainNav {
+                padding: 0.25rem 0.5rem !important;
+            }
+            #navButtonsMobile button, #navButtonsMobile a {
+                font-size: 0.9rem !important;
+                padding: 0.35rem 0.8rem !important;
+                margin: 0.1rem 0 !important;
+            }
+        }
+        
+        #navButtonsDesktop button, #navButtonsDesktop a {
+            border-radius: 9999px !important;
+            margin: 0 0.1rem !important;
+            min-width: 80px;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+
+        @media (max-width: 767px) {
+            .content-section header h1 {
+                font-size: 1.35rem !important;
+                margin-bottom: 0.3rem !important;
+                line-height: 1.1 !important;
+                letter-spacing: 0.01em !important;
+                text-shadow: 0 2px 8px #9d00ff99, 0 0 2px #fde68a99;
+            }
+            .content-section header h2 {
+                font-size: 0.95rem !important;
+                margin-bottom: 0.7rem !important;
+                line-height: 1.2 !important;
+                color: #fde68a !important;
+                font-weight: 600 !important;
+                text-shadow: 0 1px 6px #9d00ff66, 0 0 1px #fde68a99;
+                letter-spacing: 0.01em !important;
+            }
+            .content-section header img.mx-auto.h-32.w-32 {
+                width: 80px !important;
+                height: 80px !important;
+                margin-bottom: 0.5rem !important;
+                border-width: 2px !important;
+            }
+            .content-section header {
+                padding-top: 7.5rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+        }
+
+        /* --- Mobile-only: Click Here for More button --- */
+        #clickForMoreBtn {
+            display: none;
+        }
+        @media (max-width: 767px) {
+            #clickForMoreBtn {
+                display: block;
+                position: fixed;
+                bottom: 1.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1100;
+                background: linear-gradient(90deg, #9d00ff 0%, #fde68a 100%);
+                box-shadow: 0 4px 24px #9d00ff33;
+            }
+        }
+
+        @media (max-width: 767px) {
+  #mainNav .flex.items-center.gap-2 {
+    gap: 0.5rem;
+  }
+  #hamburgerBtn {
+    padding: 0.3rem 1.1rem;
+    font-size: 1.1rem;
+    border-radius: 2rem;
+    background: linear-gradient(90deg, #9d00ff 0%, #fde68a 100%);
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 12px #9d00ff22;
+    margin-left: 0.5rem;
+    margin-right: 0.2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    min-width: 120px;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #hamburgerBtn span {
+    font-size: 1.1rem !important;
+    color: #fff8dc !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  #mainNav {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    border-radius: 0 0 1.5rem 1.5rem;
+  }
+  #mainNav img {
+    height: 2.2rem !important;
+    width: 2.2rem !important;
+    margin-right: 0.3rem;
+  }
+  #mainNav .text-yellow-200 {
+    font-size: 1.1rem !important;
+    line-height: 1.2;
+    max-width: 120px;
+    white-space: normal;
+  }
+  #navButtonsMobile {
+    margin-top: 0.2rem;
+    border-radius: 0 0 1.2rem 1.2rem;
+  }
+}
+        /* --- New 3D and Transition Effects --- */
+
+/* Global Settings for 3D Consistency (already mostly present, but good to reiterate) */
+body {
+    /* Ensures 3D perspective for all child elements within the body */
+    perspective: 1500px; /* Slightly increased for more pronounced depth */
+    transform-style: preserve-3d; /* Important for nested 3D elements */
+}
+
+/* Navigation Buttons (Desktop) - Enhanced 3D Hover */
+#navButtonsDesktop button,
+#navButtonsDesktop a {
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0); /* Ensure element is on its own layer for 3D transform */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+    /* Add a subtle tilt and raise on hover */
+}
+
+#navButtonsDesktop button:hover,
+#navButtonsDesktop a:hover {
+    transform: translateY(-5px) translateZ(20px) rotateX(5deg); /* Lift, push forward, and tilt */
+    box-shadow: 0 8px 25px rgba(191, 186, 194, 0.6), 0 0 40px rgba(157, 0, 255, 0.5); /* Enhanced shadow */
+}
+
+/* Main Ambe Maa Image - Hero Section - 3D Pop and Rotate on Hover */
+.content-section header img.devi-image-hero { /* Added a new class for this specific image */
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s ease;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.content-section header img.devi-image-hero:hover {
+    transform: scale(1.1) rotateY(15deg) translateZ(50px); /* Scale, rotate, and bring forward */
+    box-shadow: 0 0 50px rgba(157, 0, 255, 0.9), 0 0 80px rgba(253, 230, 138, 0.7); /* Stronger glow */
+}
+
+/* Card Elements - More Dynamic 3D Hover Effect */
+.card {
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s ease, border 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.card:hover {
+    transform: translateY(-15px) rotateX(5deg) rotateY(-5deg) scale(1.03) translateZ(30px); /* Lift, tilt, scale, and push forward */
+    box-shadow: 0 20px 40px rgba(138, 43, 226, 0.6), 0 0 30px rgba(138, 43, 226, 0.8); /* More prominent shadow */
+    border: 1px solid rgba(255, 255, 255, 0.7); /* Brighter border */
+}
+
+/* Timeline Circles - Subtle 3D Depth on Hover */
+.timeline-item .timeline-circle {
+    transition: transform 0.3s ease-out;
+    transform-style: preserve-3d;
+}
+
+.timeline-item .timeline-circle:hover {
+    transform: translateX(-50%) scale(1.2) translateZ(15px); /* Pop out and slightly enlarge */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Add a glow */
+}
+
+/* Modal Pop-up Entrance Animation - Enhanced */
+/* Your existing pujaModalPop is good, but here's a slight variation or additional effect */
+@keyframes modal3DEntrance {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.6) rotateX(45deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) rotateX(0deg);
+    }
+}
+
+.puja-modal-animate { /* Apply this class when the modal opens */
+    animation: modal3DEntrance 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Section Transitions (already exists, but for context) */
+/* These are already handling a nice 3D flip. No changes recommended here unless you want a different axis. */
+.content-section:not(.active) {
+    opacity: 0;
+    pointer-events: none;
+    transform: rotateY(-90deg);
+    z-index: 0;
+}
+
+.content-section.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: rotateY(0deg);
+    z-index: 10;
+}
+/* Ensure the transition property covers transform and opacity */
+.content-section {
+    transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.8s;
+}
+
+/* --- Extra 3D Section Flip/Transition Effect --- */
+.section-3d {
+    will-change: transform, opacity;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+    transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1), opacity 1s;
+}
+.section-3d.section-fade-in {
+    animation: section3dIn 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.section-3d.section-fade-out {
+    animation: section3dOut 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes section3dIn {
+    0% { opacity: 0; transform: scale(0.92) rotateY(-60deg); }
+    100% { opacity: 1; transform: scale(1) rotateY(0deg); }
+}
+@keyframes section3dOut {
+    0% { opacity: 1; transform: scale(1) rotateY(0deg); }
+    100% { opacity: 0; transform: scale(0.92) rotateY(60deg); }
+}
+
+/* Add a floating 3D orb for extra effect */
+.fancy-orb {
+    position: absolute;
+    top: 10%;
+    right: 8%;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #fde68a 0%, #9d00ff 80%, transparent 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 60px 10px #9d00ff99, 0 0 120px 30px #fde68a55;
+    animation: orbFloat 7s ease-in-out infinite alternate;
+    z-index: 30;
+    filter: blur(0.5px);
+}
+@keyframes orbFloat {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-30px) scale(1.08) rotateZ(10deg); }
+}
+
+/* --- Typography Enhancements --- */
+
+        h1, .h1, .text-6xl, .text-5xl, .text-4xl {
+        font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+        font-weight: 900;
+        letter-spacing: 0.01em;
+        line-height: 1.1;
+        }
+
+        h2, .h2, .text-3xl, .text-2xl {
+        font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        line-height: 1.15;
+        }
+
+        h3, .h3, .text-xl, .text-lg {
+        font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        line-height: 1.2;
+        }
+
+p, .text-base, .text-gray-300, .text-purple-300 {
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+strong, b {
+  font-weight: 700;
+  color: #fde68a;
+}
+
+em, i {
+  font-style: italic;
+  color: #c084fc;
+}
+
+ul, ol {
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+ul li, ol li {
+  margin-bottom: 0.4em;
+}
+
+blockquote {
+  border-left: 4px solid #9d00ff;
+  background: rgba(157,0,255,0.07);
+  color: #fde68a;
+  padding: 0.7em 1.2em;
+  margin: 1.2em 0;
+  font-style: italic;
+  font-size: 1.1rem;
+  border-radius: 0.5em;
+}
+
+hr {
+  border: none;
+  border-top: 2px dashed #9d00ff;
+  margin: 2em 0;
+}
+
+/* Responsive adjustments for headings */
+@media (max-width: 767px) {
+  h1, .h1, .text-6xl, .text-5xl, .text-4xl {
+    font-size: 1.5rem !important;
+  }
+  h2, .h2, .text-3xl, .text-2xl {
+    font-size: 1.15rem !important;
+  }
+  h3, .h3, .text-xl, .text-lg {
+    font-size: 1rem !important;
+  }
+}
+
+    /* Gooey radial menu styles for mobile only */
+    @media (max-width: 767px) {
+      .gooey-menu {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 9999;
+      }
+      .menu-open {
+        display: none;
+      }
+      .menu-open-button {
+        background: #ff4081;
+        border-radius: 100%;
+        width: 60px;
+        height: 60px;
+        color: #fff;
+        text-align: center;
+        line-height: 60px;
+        font-size: 2rem;
+        box-shadow: 0 4px 24px #3f51b5aa;
+        cursor: pointer;
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+      }
+      .menu-open-button:hover {
+        transform: scale(1.1);
+      }
+      .menu-item {
+        background: #3f51b5;
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+        color: #fff;
+        text-align: center;
+        line-height: 50px;
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(0.5);
+        transition: all 0.3s cubic-bezier(0.935, 0.000, 0.340, 1.330);
+      }
+      .menu-open:checked ~ .menu-item {
+        opacity: 1;
+        pointer-events: auto;
+        transform: scale(1) translateY(-70px);
+      }
+      .menu-item.more {
+        transition-delay: 0.1s;
+      }
+    }
+    </style>
+
+
+</head>
+<body class="flex flex-col min-h-screen overflow-x-hidden overflow-y-auto bg-gradient-to-br from-purple-900 via-gray-900 to-yellow-900 text-white font-sans">
+<main class="flex-1 overflow-x-hidden">
+
+ 
+    <!-- Remove review buttons at the very top -->
+    <!-- <div class="w-full flex flex-wrap justify-center gap-4 py-3 bg-gradient-to-r from-purple-900/80 via-gray-900/80 to-yellow-900/60 z-[60]">
+        <a href="reviewpage.html" class="btn-mystic">Read Reviews</a>
+        <a href="reviewpage.html#review-form-section" class="btn-mystic">Write a Review</a>
+    </div> -->
+    <!-- Video Background (covers all sections) -->
+    <video id="bgVideo" autoplay loop muted playsinline class="fixed top-0 left-0 w-full h-full object-cover z-[-2]" style="min-width:100vw; min-height:100vh; max-width:none; max-height:none; pointer-events:none;"><source src="back-ground.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+    <!-- Overlay for readability -->
+    <div id="bgOverlay" class="fixed top-0 left-0 w-full h-full z-[-1] pointer-events-none" style="background:rgba(20,20,40,0.65);"></div>
+    <!-- Decorative Orbs for Festive Look -->
+    <div class="orb" style="top: 15%; left: 8%; animation-delay: 0s;"></div>
+    <div class="orb" style="top: 70%; left: 18%; animation-delay: 2s;"></div>
+    <div class="orb" style="top: 30%; left: 85%; animation-delay: 4s;"></div>
+    <div class="orb" style="top: 60%; left: 65%; animation-delay: 6s;"></div>
+
+    <!-- Navigation Bar -->
+    <nav id="mainNav" class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-purple-900/90 via-gray-900/90 to-yellow-900/80 shadow-xl rounded-b-2xl backdrop-blur-md">
+            <div class="flex justify-between items-center max-w-5xl mx-auto px-3 md:px-6 py-2">
+                <div class="flex items-center gap-2">
+                    <img src="https://i.pinimg.com/originals/d4/80/12/d48012e2625f2e0d4df8153020d54eb7.jpg" alt="Ambe Maa" class="h-14 w-14 md:h-25 md:w-25 rounded-full border-2 border-yellow-300 shadow-md transition-all duration-200">
+                    <span class="text-yellow-200 font-bold text-lg md:text-xl tracking-wide drop-shadow">Jay Ambe Seva Kendra USA Camp</span>
+                </div>
+                <!-- Desktop nav buttons only visible on md+ screens -->
+                <div id="navButtonsDesktop" class="hidden md:flex gap-2 items-center">
+                    <button class="btn-mystic text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-yellow-900/30 transition" onclick="showSection('home-section'); closeMobileMenu()">Home</button>
+                    <button class="btn-mystic text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-yellow-900/30 transition" onclick="showSection('about-section'); closeMobileMenu()">About Us</button>
+                    <button class="btn-mystic text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-yellow-900/30 transition" onclick="showSection('services-section'); closeMobileMenu()">Our Services</button>
+                    <button class="btn-mystic text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-yellow-900/30 transition" onclick="showSection('bts-section'); closeMobileMenu()">our photo</button>
+                    <a href="our-garba-performance.html" class="btn-mystic text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-yellow-900/30 transition block text-center" onclick="closeMobileMenu()">Garba Performance</a>
+                </div>
+                <!-- Remove mobile nav menu button from navbar -->
+            </div>
+        </nav>
+    <!-- Mobile Only: More Page Click Me Button (right after nav, not at bottom) -->
+    <!-- <button id="morePageClickMeBtn" class="mobile-only btn-mystic text-white px-8 py-3 rounded-full font-semibold shadow-lg text-base animate-bounce mt-2 w-full" style="background: linear-gradient(90deg, #9d00ff 0%, #fde68a 100%); box-shadow: 0 4px 24px #9d00ff33; display:block;" onclick="toggleMobileNavMenu()">More Page Click Me</button> -->
+
+    <div class="content-sections-wrapper mx-auto px-4 py-12 relative z-10 max-w-5xl">
+        <!-- Add "Our Photos About Camp" button at the top of each main section -->
+        <div id="home-section" class="content-section active section-3d">
+            <!-- View Our Photo Gallery button at the top -->
+            <!-- REMOVED: <button class="btn-mystic text-white px-6 py-2 rounded-full font-semibold mb-4" onclick="showPhotoGalleryModal()">View Our Photo Gallery</button> -->
+            <!-- Mobile Only: More Page Click Me Button at the top of Home section -->
+        
+            <header class="text-center mb-16 pt-16">
+                <img src="https://i.pinimg.com/originals/d4/80/12/d48012e2625f2e0d4df8153020d54eb7.jpg" alt="Ambe Maa" class="mx-auto h-32 w-32 rounded-full border-4 border-yellow-300 shadow-xl mb-6 devi-image-hero">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-2 text-yellow-200 drop-shadow-lg">Jay Ambe Seva Kendra</h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-2 text-yellow-200" style="color:#fde68a !important; text-shadow:0 1px 6px #9d00ff66,0 0 1px #fde68a99; font-weight:600;">In Danta by USA group (AMD KALOL MSH)</h2>
+                <!-- Anniversary Announcement -->
+                <div class="w-full max-w-3xl mx-auto mb-4 px-6 py-6 rounded-[2.5rem] shadow-lg font-bold text-xl md:text-2xl text-center"
+                     style="background: linear-gradient(90deg, #fde68a 0%, #a78bfa 50%, #a21caf 100%); color: #3b0764;">
+                    We are celebrating our 25th anniversary on this 1 st September. Let's celebrate this milestone together!
+                </div>
+                <div class="text-lg md:text-xl text-gray-200 mb-4">Danta Camp | 1-5 September 2025</div>
+            
+                <p class="text-lg text-purple-300 max-w-2xl mx-auto">Join us for a divine celebration of devotion, seva, and community. Experience the joy of Garba, spiritual discourses, and selfless service in the holy presence of Shree Ambe Maa.</p>
+            </header>
+            <!-- Home Page Navigation Buttons (removed duplicate) -->
+            <!-- Restored Bhadarvi Poonam Story Section -->
+            <section class="mb-20">
+                <div class="bg-gradient-to-br from-purple-900/80 via-gray-900/80 to-yellow-900/40 rounded-2xl shadow-2xl border border-purple-700/40 p-8 md:p-12">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h2 class="text-4xl font-bold mb-6 mystic-text">Story about Bhadarvi Poonam</h2>
+                            <p class="text-lg mb-6 text-gray-300">
+                                The Bhadarvi Poonam fair at Ambaji is a large religious gathering where millions of devotees walk to the temple town to pay homage to the goddess Amba during the Bhadarvi (Bhadarva) month's full moon (Poonam). The fair lasts for several days, with pilgrims arriving on foot from various parts of Gujarat and beyond. The event is organized by the Ambaji temple trust and the district administration, who provide facilities like sanitation, drinking water, food, and security for the large influx of devotees. Jay Ambe Seva Kendra USA also organizes a special seva camp during this time, giving service of food, medical support, and resting arrangements to serve the walking devotees with devotion and care.
+                            </p>
+                            <p class="text-lg mb-6 text-gray-300">
+                                It is believed that prayers offered during Bhadarvi Poonam are heard directly by the Goddess, and devotees receive her boundless blessings. In this spirit of devotion, Jay Ambe Seva Kendra serves pilgrims with heartfelt seva, helping them on their sacred journey to seek Maa Amba’s divine grace.
+
+                            </p>
+                            <button class="btn-mystic text-white px-8 py-3 rounded-full font-semibold" onclick="showSection('about-section')">
+                                ABOUT US
+                            </button>
+                            <!-- Added review buttons below ABOUT US -->
+                            <div class="flex flex-wrap gap-3 mt-4">
+                                <a href="reviewpage.html" class="btn-mystic text-white px-8 py-3 rounded-full font-semibold">Read Reviews</a>
+                                <a href="reviewpage.html#review-form-section" class="btn-mystic text-white px-8 py-3 rounded-full font-semibold">Write a Review</a>
+                            </div>
+                        </div>
+                        <div class="relative h-64 md:h-96">
+                            <div class="absolute inset-0 bg-purple-900 opacity-20 rounded-xl"></div>
+                            <div class="absolute inset-4 border-2 border-purple-500 rounded-xl opacity-30"></div>
+                            <div class="absolute inset-8 bg-gradient-to-br from-purple-900 to-transparent rounded-xl opacity-40"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Bhadarvi Poonam Story Section -->
+           
+            <!-- Schedule Section End -->
+              <!-- Garba Performance Videos Section -->
+            <!-- Removed Garba Performance Videos Section -->
+            <!-- Event Highlights Section -->
+            <section class="mb-20">
+                <h2 class="text-4xl font-bold mb-12 text-center mystic-text">Divine Manifestations</h2>
+                <!-- Added event description container -->
+                <div class="max-w-2xl mx-auto mb-8 bg-gradient-to-br from-yellow-200/80 via-purple-200/60 to-purple-900/30 rounded-xl shadow-lg border border-yellow-400/60 p-6 text-center text-purple-900 font-semibold" style="font-size:1.15rem;">
+                    Join us for an unforgettable experience featuring cultural festivities, a dedicated Medical Camp, and vibrant Garba nights with renowned artists like Kinjal Dave. Celebrate tradition and community!
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="card p-8 rounded-xl">
+                        <div class="text-5xl mb-4 text-purple-400" data-tooltip="Number of Sacred Rituals Performed">🕉️</div>
+                        <h3 class="text-2xl font-bold mb-3">Sacred Rituals</h3>
+                        <p class="text-gray-300">
+                            Special pujas and yagnas performed during this time carry amplified spiritual power.
+                        </p>
+                        <div class="counter" data-count="108" style="font-size:2rem;color:#fde68a;font-weight:bold;">0</div>
+                    </div>
+                    <div class="card p-8 rounded-xl">
+                        <div class="text-5xl mb-4 text-purple-400" data-tooltip="Blessings Bestowed">🙏</div>
+                        <h3 class="text-2xl font-bold mb-3">Divine Grace</h3>
+                        <p class="text-gray-300">
+                            Shree Ambe Maa showers her devotees with protection, prosperity, and spiritual growth.
+                        </p>
+                        <div class="counter" data-count="1000" style="font-size:2rem;color:#fde68a;font-weight:bold;">0</div>
+                    </div>
+                    <div class="card p-8 rounded-xl">
+                        <div class="text-5xl mb-4 text-purple-400" data-tooltip="Miracles Witnessed">✨</div>
+                        <h3 class="text-2xl font-bold mb-3">Miraculous Events</h3>
+                        <p class="text-gray-300">
+                            Many experience divine visions and miraculous blessings during this sacred time.
+                        </p>
+                        <div class="counter" data-count="25" style="font-size:2rem;color:#fde68a;font-weight:bold;">0</div>
+                    </div>
+                </div>
+            </section>
+            <!-- Timeline Section -->
+            <section class="mb-20 sacred-observances-timeline">
+                <h2 class="text-4xl font-bold mb-12 text-center mystic-text">Sacred Observances</h2>
+                <div class="relative">
+                    <div class="timeline-line"></div>
+                    <div class="mb-8 timeline-item">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-500 rounded-full h-8 w-8 flex items-center justify-center z-10 timeline-circle">
+                                <div class="bg-white rounded-full h-4 w-4"></div>
+                            </div>
+                            <div class="ml-4 timeline-content">
+                                <h3 class="text-2xl font-bold text-purple-300">Purification</h3>
+                            </div>
+                        </div>
+                        <div class="ml-12 pl-4 pb-4">
+                            <p class="text-gray-300">
+                                Three days of fasting and purification rituals prepare devotees to receive divine energies.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-8 timeline-item">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-600 rounded-full h-8 w-8 flex items-center justify-center z-10 timeline-circle">
+                                <div class="bg-white rounded-full h-4 w-4"></div>
+                            </div>
+                            <div class="ml-4 timeline-content">
+                                <h3 class="text-2xl font-bold text-purple-300">Ponam Night</h3>
+                            </div>
+                        </div>
+                        <div class="ml-12 pl-4 pb-4">
+                            <p class="text-gray-300">
+                                The sacred night when thousands gather at temples to witness the divine presence of Ambe Maa.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-8 timeline-item">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-700 rounded-full h-8 w-8 flex items-center justify-center z-10 timeline-circle">
+                                <div class="bg-white rounded-full h-4 w-4"></div>
+                            </div>
+                            <div class="ml-4 timeline-content">
+                                <h3 class="text-2xl font-bold text-purple-300">Blessing Period</h3>
+                            </div>
+                        </div>
+                        <div class="ml-12 pl-4 pb-4">
+                            <p class="text-gray-300">
+                                The following week is for assimilating the divine energy through meditation and service.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Call to Action -->
+            <section class="text-center py-12">
+                <!-- View Our Photo Gallery button above review buttons -->
+                <!-- REMOVED: <button class="btn-mystic text-white px-6 py-2 rounded-full font-semibold mb-4" onclick="showPhotoGalleryModal()">View Our Photo Gallery</button> -->
+                <h2 class="text-3xl font-bold mb-4 mystic-text">Ready to Join?</h2>
+                <p class="text-lg text-purple-300 mb-6">Register now and be part of a once-in-a-lifetime celebation!</p>
+                <!-- Replace Register for Camp button with Sign In button -->
+                <a href="signin.html" class="btn-mystic text-white px-8 py-3 rounded-full font-semibold inline-block">Sign In</a>
+                <!-- Only Read Reviews button for public -->
+                <div class="flex flex-wrap justify-center gap-4 mt-8">
+                    <a href="reviewpage.html" class="btn-mystic">Read Reviews</a>
+                </div>
+            </section>
+        </div>
+
+        <div id="about-section" class="content-section section-3d">
+            <!-- Mobile Only: More Page Click Me Button at the top of About section -->
+            <button id="aboutMorePageClickMeBtn" class="mobile-only btn-mystic text-white px-8 py-3 rounded-full font-semibold shadow-lg text-base animate-bounce mt-2 w-full"
+    style="background: linear-gradient(90deg, #9d00ff 0%, #fde68a 100%); box-shadow: 0 4px 24px #9d00ff33; display:block;"
+    onclick="openCustomMobileMenu()">More Page Click Me</button>
+            <header class="text-center mb-16">
+                <div class="title-container">
+                    <img src="https://i.pinimg.com/originals/d4/80/12/d48012e2625f2e0d4df8153020d54eb7.jpg"
+                         alt="Ambaji Shree Ambe Maa"
+                         class="devi-image mb-9">
+                    <h1 class="text-6xl md:text-6xl font-bold mb-4 mystic-text glow">About Jay Ambe Seva Kendra USA</h1>
+                    <h2> <p class="text-xl text-purple-300 mb-9">Our Journey of Devotion and Service</p></h2>
+                </div>
+                <!-- Navigation Buttons for About Section -->
+                <div class="flex justify-center gap-3 flex-wrap mt-6 mb-2">
+                    <button class="btn-mystic text-white px-6 py-2 rounded-full font-semibold text-sm" onclick="showSection('home-section')">Home</button>
+                    <button class="btn-mystic text-white px-6 py-2 rounded-full font-semibold text-sm" onclick="showSection('services-section')">Services</button>
+                    <button class="btn-mystic text-white px-6 py-2 rounded-full font-semibold text-sm" onclick="showSection('bts-section')">our photo & video</button>
+                    <a href="our-garba-performance.html" class="btn-mystic text-white px-6 py-2 rounded-full font-semibold text-sm">Garba Performance</a>
+                </div>
+            </header>
+            <!-- Our Story and Mission in container -->
+            <section class="mb-20 text-center">
+                <div class="max-w-3xl mx-auto bg-gradient-to-br from-purple-900/80 via-gray-900/80 to-yellow-900/40 rounded-2xl shadow-2xl border border-purple-700/40 p-8 md:p-12">
+                    <h2 class="text-4xl font-bold mb-8 mystic-text">Our Story and Mission</h2>
+                    <p class="text-lg mb-6 text-gray-300 max-w-4xl mx-auto">
+                        Jay Ambe Seva Kendra USA was founded with the sole purpose of fostering spiritual growth and community service, inspired by the divine grace of Shree Ambe Maa. For 25 years, we have dedicated ourselves to organizing auspicious events and camps, providing a platform for devotees to connect with their faith and contribute to selfless service (seva).
+                    </p>
+                    <p class="text-lg mb-6 text-gray-300 max-w-4xl mx-auto">
+                        **As part of our commitment to seva, we proudly offer comprehensive medical help, nourishing meals (breakfast, morning tea, lunch, evening tea, and dinner), comfortable resting arrangements, and vibrant Garba experiences with Gujarat's finest singers, ensuring every pilgrim's well-being and spiritual joy.**
+                    </p>
+                    <p class="text-lg mb-6 text-gray-300 max-w-4xl mx-auto">
+                        Our annual camp in Danta is a testament to our commitment, bringing together hundreds of pilgrims to partake in sacred rituals, spiritual discourses, and communal activities. We believe in upholding the rich traditions of our heritage while embracing modernity, creating an inclusive environment for all who seek blessings and wish to serve.
+                    </p>
+                    <button class="border border-yellow-400 text-yellow-300 px-8 py-3 rounded-full font-semibold hover:bg-yellow-900/30 transition mt-4" onclick="showBTSModal()">
+                        Our Photo Gallery
+                    </button>
+                </div>
+            </section>
+            <!-- Core Values Section -->
+            <section class="mb-20">
+                <h2 class="text-4xl font-bold mb-12 text-center mystic-text">Our Core Values</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="card p-8 rounded-xl text-center">
+                        <div class="text-5xl mb-4 text-purple-400">💖</div>
+                        <h3 class="text-2xl font-bold mb-3">Devotion (Bhakti)</h3>
+                        <p class="text-gray-300">
+                            Cultivating unwavering faith and love for Shree Ambe Maa in every endeavor.
+                        </p>
+                    </div>
+
+                    <div class="card p-8 rounded-xl text-center">
+                        <div class="text-5xl mb-4 text-purple-400">🤲</div>
+                        <h3 class="text-2xl font-bold mb-3">Service (Seva)</h3>
+                        <p class="text-gray-300">
+                            Engaging in selfless actions to uplift the community and spread divine blessings.
+                        </p>
+                    </div>
+
+                    <div class="card p-8 rounded-xl text-center">
+                        <div class="text-5xl mb-4 text-purple-400">✨</div>
+                        <h3 class="text-2xl font-bold mb-3">Community (Sangathan)</h3>
+                        <p class="text-gray-300">
+                            Building a strong, harmonious, and supportive spiritual family.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Video Gallery Section Start -->
+
+         <section class="mb-20">
+    <h2 class="text-4xl font-bold mb-8 mystic-text text-center">Photo Gallery</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+
+        <!-- Photo 1 -->
+        <div class="card p-4 rounded-xl flex flex-col bg-gray-800 border border-gray-700">
+            <div class="image-container relative pb-[56.25%] overflow-hidden rounded-lg bg-black">
+                <img 
+                    src="our stage .jpg" 
+                    alt="Stage View"
+                    class="absolute inset-0 w-full h-full object-cover cursor-pointer photo-img"
+                    onclick="openImage(this.src)"
+                />
+            </div>
+            <div class="text-base text-purple-300 font-semibold mt-4 text-center">Stage View</div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="card p-4 rounded-xl flex flex-col bg-gray-800 border border-gray-700">
+            <div class="image-container relative pb-[56.25%] overflow-hidden rounded-lg bg-black">
+                <img 
+                    src="garba 2.jpg" 
+                    alt="Stage Close Up"
+                    class="absolute inset-0 w-full h-full object-cover cursor-pointer photo-img"
+                    onclick="openImage(this.src)"
+                />
+            </div>
+            <div class="text-base text-purple-300 font-semibold mt-4 text-center">Stage Close Up</div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="card p-4 rounded-xl flex flex-col bg-gray-800 border border-gray-700">
+            <div class="image-container relative pb-[56.25%] overflow-hidden rounded-lg bg-black">
+                <img 
+                    src="our-certificate.jpg" 
+                    alt="Group Photo 2022"
+                    class="absolute inset-0 w-full h-full object-cover cursor-pointer photo-img"
+                    onclick="openImage(this.src)"
+                />
+            </div>
+            <div class="text-base text-purple-300 font-semibold mt-4 text-center">our certificate (we have 20+ certificate)</div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="card p-4 rounded-xl flex flex-col bg-gray-800 border border-gray-700">
+            <div class="image-container relative pb-[56.25%] overflow-hidden rounded-lg bg-black">
+                <img 
+                    src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c014feb3-c8ec-487a-8775-4a7ac4790a12.png" 
+                    alt="Festival stage with colorful lighting"
+                    class="absolute inset-0 w-full h-full object-cover cursor-pointer photo-img"
+                    onclick="openImage(this.src)"
+                />
+            </div>
+            <div class="text-base text-purple-300 font-semibold mt-4 text-center">Festival Stage</div>
+        </div>
+
+        <!-- Photo 5 -->
+        <div class="card p-4 rounded-xl flex flex-col bg-gray-800 border border-gray-700">
+            <div class="image-container relative pb-[56.25%] overflow-hidden rounded-lg bg-black">
+                <img 
+                    src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/69599890-eb61-46ed-82bc-d2bb36333a2e.png" 
+                    alt="Close-up of Garba dancers"
+                    class="absolute inset-0 w-full h-full object-cover cursor-pointer photo-img"
+                    onclick="openImage(this.src)"
+                />
+            </div>
+            <div class="text-base text-purple-300 font-semibold mt-4 text-center">Garba Performance</div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Popup Viewer -->
+<div id="popup" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50" onclick="closeImage()">
+    <img id="popup-img" src="" alt="Full View" class="max-w-full max-h-full rounded-lg border-4 border-white shadow-xl">
+</div>
+
+<script>
+    function openImage(src) {
+
+        
+        if (!isSignedIn()) {
+            alert("Please sign in to access the website and for a great view.");
+            return;
+        }
+        document.getElementById('popup-img').src = src;
+        document.getElementById('popup').classList.remove('hidden');
+    }
+
+    function closeImage() {
+        document.getElementById('popup').classList.add('hidden');
+    }
+
+    // Close with ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === "Escape") closeImage();
+    });
+</script>
+            <!-- Video Gallery Section End -->
+
+            <section class="mb-20">
+                <h2 class="text-4xl font-bold mb-12 text-center mystic-text">Sacred Observances</h2>
+                <div class="relative">
+                    <div class="timeline-line"></div>
+                    <div class="mb-8 timeline-item">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-500 rounded-full h-8 w-8 flex items-center justify-center z-10 timeline-circle">
+                                <div class="bg-white rounded-full h-4 w-4"></div>
+                            </div>
+                            <div class="ml-4 timeline-content">
+                                <h3 class="text-2xl font-bold text-purple-300">Purification</h3>
+                            </div>
+                        </div>
+                        <div class="ml-12 pl-4 pb-4">
+                            <p class="text-gray-300">
+                                Three days of fasting and purification rituals prepare devotees to receive divine energies.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-8 timeline-item">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-600 rounded-full h-8 w-8 flex items-center justify-center z-10 timeline-circle">
+                                <div class="bg-white rounded-full h-4 w-4"></div>
+                            </div>
+                            <div class="ml-4 timeline-content">
+                                <h3 class="text-2xl font-bold text-purple-300">Ponam Night</h3>
+                            </div>
+                        </div>
+                        <div class="ml-12 pl-4 pb-4">
+                            <p class="text-gray-300">
+                                The sacred night when thousands gather at temples to witness the divine presence of Ambe Maa.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-8 timeline-item">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-700 rounded-full h-8 w-8 flex items-center justify-center z-10 timeline-circle">
+                                <div class="bg-white rounded-full h-4 w-4"></div>
+                            </div>
+                            <div class="ml-4 timeline-content">
+                                <h3 class="text-2xl font-bold text-purple-300">Blessing Period</h3>
+                            </div>
+                        </div>
+                        <div class="ml-12 pl-4 pb-4">
+                            <p class="text-gray-300">
+                                The following week is for assimilating the divine energy through meditation and service.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Call to Action -->
+            <section class="text-center py-12">
+                <h2 class="text-3xl font-bold mb-4 mystic-text">Ready to Join?</h2>
+                <p class="text-lg text-purple-300 mb-6">Register now and be part of a once-in-a-lifetime celebration!</p>
+                <!-- Replace Register for Camp button with Sign In button -->
+                <a href="signin.html" class="btn-mystic text-white px-8 py-3 rounded-full font-semibold inline-block">Sign In</a>
+                <!-- Only Read Reviews button for public -->
+                <div class="flex flex-wrap justify-center gap-4 mt-8">
+                    <a href="reviewpage.html" class="btn-mystic">Read Reviews</a>
+                </div>
+            </section>
+        </div>
+
+        <div id="services-section" class="content-section section-3d">
+            <!-- Mobile Only: More Page Click Me Button at the top of Services section -->
+            <button id="servicesMorePageClickMeBtn" class="mobile-only btn-mystic text-white px-8 py-3 rounded-full font-semibold shadow-lg text-base animate-bounce mt-2 w-full"
+    style="background: linear-gradient(90deg, #9d00ff 0%, #fde68a 100%); box-shadow: 0 4px 24px #9d00ff33; display:block;"
+    onclick="openCustomMobileMenu()">More Page Click Me</button>
+            <!-- View Our Photo Gallery button -->
+            <!-- REMOVED: <button class="btn-mystic text-white px-6 py-2 rounded-full font-semibold mb-4" onclick="showPhotoGalleryModal()">View Our Photo Gallery</button> -->
+            <header class="text-center mb-16">
+                <div class="title-container">
+                    <img src="https://i.pinimg.com/originals/d4/80/12/d48012e2625f2e0d4df8153020d54eb7.jpg"
+                         alt="Ambaji Shree Ambe Maa"
+                         class="devi-image mb-9">
+                    <h1 class="text-6xl md:text-6xl font-bold mb-4 mystic-text glow">Our Services (Seva)</h1>
+                    <h2> <p class="text-xl text-purple-300 mb-9">Comprehensive Care for Every Devotee</p></h2>
+                </div>
+            </header>
+
+            <!-- Our Dedication to Your Well-being in container -->
+            <section class="mb-20 text-center">
+                <div class="max-w-3xl mx-auto bg-gradient-to-br from-purple-900/80 via-gray-900/80 to-yellow-900/40 rounded-2xl shadow-2xl border border-purple-700/40 p-8 md:p-12">
+                    <h2 class="text-4xl font-bold mb-8 mystic-text">Our Dedication to Your Well-being</h2>
+                    <p class="text-lg mb-6 text-gray-300 max-w-4xl mx-auto">
+                        At Jay Ambe Seva Kendra USA, our primary goal is to ensure every pilgrim's comfort, health, and spiritual fulfillment during their visit to Danta. We are committed to providing a holistic experience, allowing you to focus purely on your devotion to Shree Ambe Maa.
+                    </p>
+                </div>
+            </section>
+
+            <section class="mb-20">
+                <h2 class="text-4xl font-bold mb-12 text-center mystic-text">What We Offer</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card p-8 rounded-xl text-center">
+                        <div class="text-5xl mb-4 text-purple-400">⚕️</div>
+                        <h3 class="text-2xl font-bold mb-3">Medical Help Camp</h3>
+                        <p class="text-gray-300">
+                                                                                                             Access to a <b>comprehensive medical camp</b> with qualified doctors and essential medicines to address any health needs during your stay.
+                        </p>
+                    </div>
+
+                    <div class="card p-8 rounded-xl text-center">
+                        <div class="text-5xl mb-4 text-purple-400">🍽️</div>
+                        <h3 class="text-2xl font-bold mb-3">Nutritious Meals</h3>
+                        <p class="text-gray-300">
+                            Enjoy <b>breakfast, morning tea, lunch, evening tea, and dinner</b> prepared with care, providing strength for your devotional journey.
+                        </p>
+                    </div>
+
+                    <div class="card p-8 rounded-xl text-center">
+                        <div class="text-5xl mb-4 text-purple-400">😴</div>
+                        <h3 class="text-2xl font-bold mb-3">Restful Sleep</h3>
+                        <p class="text-gray-300">
+                            We provide comfortable and <b>clean arrangements for a restful night's sleep</b>, ensuring you are revitalized for each day's activities.
+                        </p>
+                    </div>
+
+                    <div class="card p-8 rounded-xl text-center">
+                        <div class="text-5xl mb-4 text-purple-400">💃</div>
+                        <h3 class="text-2xl font-bold mb-3">Vibrant Garba Experience</h3>
+                        <p class="text-gray-300">
+                            Immerse yourself in a joyous <b>Garba celebration</b> with exhilarating performances by some of <b>Gujarat's best singers</b>.
+                        </p>
+                    </div>
+
+                     <div class="card p-8 rounded-xl text-center">
+                        <div class="text-5xl mb-4 text-purple-400">🚿</div>
+                        <h3 class="text-2xl font-bold mb-3">Sanitation & Facilities</h3>
+                        <p class="text-gray-300">
+                            Clean and well-maintained <b>sanitation facilities</b>, including clean washrooms and bathing areas for your convenience.
+                        </p>
+                    </div>
+
+                     <div class="card p-8 rounded-xl text-center">
+                        <div class="text-5xl mb-4 text-purple-400">💧</div>
+                        <h3 class="text-2xl font-bold mb-3">Hydration & Comfort</h3>
+                        <p class="text-gray-300">
+                            Ample access to <b>clean drinking water</b> and shaded resting areas to ensure your comfort throughout the day.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="text-center py-16">
+                <h2 class="text-4xl font-bold mb-6 mystic-text">Experience Our Seva</h2>
+                <p class="text-xl text-purple-300 mb-8">Join us for a truly blessed and comfortable pilgrimage.</p>
+                <div class="flex justify-center gap-4 flex-wrap">
+                    <button class="btn-mystic text-white px-8 py-3 rounded-full font-semibold" onclick="showSection('home-section')">
+                        Back to Home
+                    </button>
+                    <button class="border border-purple-500 text-purple-300 px-8 py-3 rounded-full font-semibold hover:bg-purple-900/30 transition">
+                        Register for Camp
+                    </button>
+                    <button class="btn-mystic text-white px-8 py-3 rounded-full font-semibold ml-2" onclick="showSection('bts-section')">
+                        Our Photo & Video
+                    </button>
+                    <a href="our-garba-performance.html" class="btn-mystic text-white px-8 py-3 rounded-full font-semibold">Our Garba Performance</a>
+                </div>
+            </section>
+        </div>
+
+        <div id="bts-section" class="content-section section-3d">
+    <header class="text-center mb-16">
+        <h1 class="text-5xl font-bold mb-8 mystic-text glow">Our Photos & Videos</h1>
+        <!-- REMOVED: <button class="btn-mystic text-white px-6 py-2 rounded-full font-semibold mb-4" onclick="showPhotoGalleryModal()">View Our Full Gallery</button> -->
+    </header>
+
+    <section class="mb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="gallery-item bg-gray-800 bg-opacity-60 rounded-xl p-8 shadow-lg flex flex-col items-center">
+            <div class="text-2xl font-bold mb-4 text-yellow-200 text-center">Before</div>
+            <img src="before-image.jpg" alt="Before Photo - Jay Ambe Seva Kendra camp ground preparation" class="photo-img rounded-xl border-2 border-purple-500 shadow-md w-full h-auto max-w-xs object-cover">
+            <div class="caption text-center text-gray-400 mt-4">Jay Ambe Seva Kendra camp ground preparation</div>
+        </div>
+
+        <div class="gallery-item bg-gray-800 bg-opacity-60 rounded-xl p-8 shadow-lg flex flex-col items-center">
+            <div class="text-2xl font-bold mb-4 text-yellow-200 text-center">Final Result</div>
+            <img src="final-result.jpg" alt="Final Result Photo - Jay Ambe Seva Kendra Stage Event" class="photo-img rounded-xl border-2 border-purple-500 shadow-md w-full h-auto max-w-xs object-cover">
+            <div class="caption text-center text-gray-400 mt-4">Jay Ambe Seva Kendra stage event (2025)</div>
+        </div>
+
+        <div class="gallery-item bg-gray-800 bg-opacity-60 rounded-xl p-8 shadow-lg flex flex-col items-center">
+            <div class="text-2xl font-bold mb-4 text-yellow-200 text-center">Stage View from Public</div>
+            <img src="stage from public view.jpg" alt="Stage Setup" class="photo-img rounded-xl border-2 border-purple-500 shadow-md w-full h-auto max-w-xs object-cover">
+            <div class="caption text-center text-gray-400 mt-4">Stage setup in progress for the event</div>
+        </div>
+
+        <div class="gallery-item bg-gray-800 bg-opacity-60 rounded-xl p-8 shadow-lg flex flex-col items-center">
+            <div class="text-2xl font-bold mb-4 text-yellow-200 text-center">Volunteers at Work</div>
+            <img src="public for food .jpg" alt="Volunteers Working" class="photo-img rounded-xl border-2 border-purple-500 shadow-md w-full h-auto max-w-xs object-cover">
+            <div class="caption text-center text-gray-400 mt-4">Our volunteers preparing food and facilities</div>
+        </div>
+
+        <div class="gallery-item bg-gray-800 bg-opacity-60 rounded-xl p-8 shadow-lg flex flex-col items-center">
+            <div class="text-2xl font-bold mb-4 text-yellow-200 text-center">Medical Camp</div>
+            <img src="medical camp.jpg" alt="Medical Camp" class="photo-img rounded-xl border-2 border-purple-500 shadow-md w-full h-auto max-w-xs object-cover">
+            <div class="caption text-center text-gray-400 mt-4">Medical camp ready to serve devotees</div>
+        </div>
+
+        <div class="gallery-item bg-gray-800 bg-opacity-60 rounded-xl p-8 shadow-lg flex flex-col items-center">
+            <div class="text-2xl font-bold mb-4 text-yellow-200 text-center">Public Gatherings</div>
+            <img src="public.jpg" alt="Garba Practice" class="photo-img rounded-xl border-2 border-purple-500 shadow-md w-full h-auto max-w-xs object-cover">
+            <div class="caption text-center text-gray-400 mt-4">Rehearsals for the Garba performance</div>
+        </div>
+
+        <div class="gallery-item bg-gray-800 bg-opacity-60 rounded-xl p-8 shadow-lg flex flex-col items-center">
+            <div class="text-2xl font-bold mb-4 text-yellow-200 text-center">Our Food</div>
+            <img src="our food.jpg" alt="Delicious Food Served" class="photo-img rounded-xl border-2 border-purple-500 shadow-md w-full h-auto max-w-xs object-cover">
+            <div class="caption text-center text-gray-400 mt-4">Our delicious food offerings</div>
+        </div>
+
+        <div class="gallery-item bg-gray-800 bg-opacity-60 rounded-xl p-8 shadow-lg flex flex-col items-center">
+            <div class="text-2xl font-bold mb-4 text-yellow-200 text-center">Our Interview</div>
+            <!-- Replace video with YouTube embed -->
+            <figure class="w-full">
+                <div class="w-full aspect-video rounded-xl border-2 border-purple-500 shadow-md overflow-hidden">
+                    <iframe 
+                        width="100%" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/PkV-xenlRkU?si=UGBxO-lgbThlh3oy" 
+                        title="Our Interview" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen
+                        class="w-full h-full"></iframe>
+                </div>
+                <figcaption class="text-center text-gray-400 mt-4">An exclusive interview</figcaption>
+            </figure>
+        </div>
+<div class="gallery-item bg-gray-800 bg-opacity-60 rounded-xl p-8 shadow-lg flex flex-col items-center">
+    <div class="text-2xl font-bold mb-4 text-yellow-200 text-center">Bhadarvi Poonam Story</div>
+    <figure class="w-full">
+        <iframe class="video-player w-full rounded-xl border-2 border-purple-500 shadow-md" 
+                height="360"
+                src="https://www.youtube.com/embed/QMR8LSHcixQ" 
+                title="Bhadarvi Poonam Story" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+        </iframe>
+        <figcaption class="text-center text-gray-400 mt-4">The heartwarming story of Bhadarvi Poonam</figcaption>
+    </figure>
+</div>
+
+<div class="gallery-item bg-gray-800 bg-opacity-60 rounded-xl p-8 shadow-lg flex flex-col items-center">
+    <div class="text-2xl font-bold mb-4 text-yellow-200 text-center">Story of Jay Ambe Seva Kendra USA Camp</div>
+    <figure class="w-full">
+        <iframe class="video-player w-full rounded-xl border-2 border-purple-500 shadow-md" 
+                height="360"
+                src="https://www.youtube.com/embed/06xDykY-6eo" 
+                title="Jay Ambe Seva Kendra USA Camp Story" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+        </iframe>
+        <figcaption class="text-center text-gray-400 mt-4">The heartwarming story of Jay Ambe Seva Kendra USA Camp</figcaption>
+    </figure>
+</div>
+
+    </section>
+</div>
+</div>
+    <script>
+    // Initialize Vanta.js background
+    let vantaEffect;
+
+    function isMobileDevice() {
+        return window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    function initVantaBackground() {
+        if (vantaEffect) vantaEffect.destroy();
+        const vantaBg = document.getElementById('vanta-bg');
+        // Always show Vanta background, even on mobile
+        if (vantaBg) vantaBg.style.display = '';
+        vantaEffect = VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 400.00,
+            minWidth: 400.00,
+            scale: 0.00,
+            scaleMobile: 0.00,
+            color: 0x7f3fff,
+            backgroundColor: 0x111827,
+            points: 12.00,
+            maxDistance: 22.00,
+            spacing: 16.00
+        });
+    }
+
+    // Create 3D portal effect
+    let portalAnimationId; // To store the animation frame ID for the portal
+
+    function initPortal() {
+        const canvas = document.getElementById('portalCanvas');
+        if (portalAnimationId) {
+            cancelAnimationFrame(portalAnimationId);
+        }
+        if (canvas && currentSectionId === 'home-section' && !isMobileDevice()) {
+            const parent = canvas.parentElement;
+            canvas.width = parent.clientWidth;
+            canvas.height = parent.clientHeight;
+
+            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+            renderer.setSize(parent.clientWidth, parent.clientHeight);
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, parent.clientWidth / parent.clientHeight, 0.1, 1000);
+
+            camera.position.z = 5;
+
+            const geometry = new THREE.TorusGeometry(1.4, 0.4, 16, 100);
+            const material = new THREE.MeshBasicMaterial({
+                color: 0x9d00ff,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.8
+            });
+            const torus = new THREE.Mesh(geometry, material);
+            scene.add(torus);
+
+            const innerGeometry = new THREE.SphereGeometry(1,  32, 32);
+            const innerMaterial = new THREE.MeshBasicMaterial({
+                color: 0x5e00a8,
+                transparent: true,
+                opacity: 0.3
+            });
+            const sphere = new THREE.Mesh(innerGeometry, innerMaterial);
+            scene.add(sphere);
+
+            function animate() {
+                portalAnimationId = requestAnimationFrame(animate);
+
+                torus.rotation.x += 0.01;
+                torus.rotation.y += 0.02;
+
+                sphere.rotation.x += 0.005;
+                sphere.rotation.y += 0.01;
+
+               
+
+                renderer.render(scene, camera);
+            }
+            animate();
+        } else if (canvas && portalAnimationId) {
+            cancelAnimationFrame(portalAnimationId);
+            portalAnimationId = null;
+            // On mobile, clear the canvas
+            const ctx = canvas.getContext('2d');
+            ctx && ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    }
+
+    // Confetti function
+    function launchConfetti() {
+        if (typeof confetti !== 'undefined') {
+            const duration = 5 * 1000;
+            const animationEnd = Date.now() + duration;
+            const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 9999 };
+
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            const interval = setInterval(function() {
+                const timeLeft = animationEnd - Date.now();
+
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+
+                const particleCount = 50 * (timeLeft / duration);
+
+                confetti(Object.assign({}, defaults, {
+                    particleCount,
+                    origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
+                }));
+                confetti(Object.assign({}, defaults, {
+                    particleCount,
+                    origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
+                }));
+            }, 250);
+        } else {
+            console.warn("Confetti library not loaded. Confetti effect will not play.");
+        }
+    }
+
+    let currentSectionId = 'home-section'; // Keep track of the currently active section
+
+    function showSection(sectionId) {
+        const currentSection = document.getElementById(currentSectionId);
+        const nextSection = document.getElementById(sectionId);
+
+        // Hide nav if about-section, show otherwise
+        const nav = document.getElementById('mainNav');
+        // Always show the nav bar
+        nav.style.display = '';
+
+        if (currentSection === nextSection) {
+            return; // Do nothing if clicking on the current section
+        }
+
+        // Add transition-out effect to current section
+        if (currentSection) {
+            currentSection.classList.remove('active');
+            currentSection.classList.add('section-fade-out');
+            setTimeout(() => {
+                currentSection.classList.remove('section-fade-out');
+            }, 500);
+        }
+
+        // Add transition-in effect to next section
+        nextSection.classList.add('section-fade-in');
+        setTimeout(() => {
+            nextSection.classList.remove('section-fade-in');
+            nextSection.classList.add('active');
+        }, 10); // Add active after fade-in starts
+        setTimeout(() => {
+            nextSection.classList.remove('section-fade-in');
+        }, 500);
+
+        currentSectionId = sectionId;
+
+        // Manage portal animation based on the active section
+        initPortal(); // Call initPortal to start/stop as needed
+
+        // Optional: Add a confetti burst or other effect on section change
+        if (typeof confetti !== 'undefined') {
+            confetti({
+                particleCount: 40,
+                spread: 60,
+                origin: { y: 0.1 },
+                zIndex: 9999
+            });
+        }
+    }
+
+    // Modal functions for Puja
+    function scrollToElementById(id) {
+        const el = document.getElementById(id);
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+    function showPujaModal() {
+        // Scroll to top and ensure modal opens after scroll is complete
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Listen for scroll event to finish, then open modal
+        let scrollTimeout;
+        function openModalAfterScroll() {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(function() {
+                openPujaModalWithEffect();
+                window.removeEventListener('scroll', openModalAfterScroll);
+            }, 200); // Wait a bit after last scroll event
+        }
+        window.addEventListener('scroll', openModalAfterScroll);
+        // Fallback: open modal after 1s if scroll event doesn't fire (e.g. already at top)
+        setTimeout(function() {
+            openPujaModalWithEffect();
+            window.removeEventListener('scroll', openModalAfterScroll);
+        }, 1000);
+    }
+
+    function openPujaModalWithEffect() {
+        const modal = document.getElementById('pujaModal');
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        // Add animation class
+        modal.classList.add('puja-modal-animate');
+        // Remove animation class after animation ends
+        setTimeout(function() {
+            modal.classList.remove('puja-modal-animate');
+        }, 700);
+        // Confetti burst for extra effect
+
+        if (typeof confetti !== 'undefined') {
+            confetti({
+                particleCount: 80,
+                spread: 90,
+                origin: { y: 0.2 },
+                zIndex: 9999
+            });
+        }
+    }
+    function closePujaModal() {
+        document.getElementById('pujaModal').style.display = 'none';
+        document.body.style.overflow = '';
+        setTimeout(function() {
+            scrollToElementById('participatePujaBtn');
+        }, 200); // Wait for modal to close
+    }
+
+    // --- Behind the Scenes Modal Functions ---
+    window.showBTSModal = function() {
+        const modal = document.getElementById('btsModal');
+        const content = document.getElementById('btsModalContent');
+        // Load BTS HTML content (static for now, could be fetched via AJAX if needed)
+        content.innerHTML = `
+                <h1 style="text-align:center; color:#c084fc; font-size:2.2rem; margin-bottom:1.5rem;">Our Behind the Scenes</h1>
+                <div class="section" style="background:rgba(40,30,60,0.7); border-radius:1rem; padding:2rem 1.5rem; margin-bottom:2rem; box-shadow:0 4px 24px rgba(138,43,226,0.15);">
+                    <div class="section-title" style="font-size:1.5rem; color:#fde68a; margin-bottom:1rem; text-align:center;">This is the wait time</div>
+                    <img src='bts-image.jpg' alt='Behind the Scenes' class='bts-img' style='display:block; max-width:100%; margin:1.5rem auto; border-radius:1rem; box-shadow:0 2px 16px rgba(157,0,255,0.2); border:2px solid #9d00ff;'>
+                    <div class="caption" style="text-align:center; color:#a3a3a3; font-size:1rem; margin-top:0.5rem;">Behind the scenes: work in progress</div>
+                </div>
+                <div class="section" style="background:rgba(40,30,60,0.7); border-radius:1rem; padding:2rem 1.5rem; margin-bottom:2rem; box-shadow:0 4px 24px rgba(138,43,226,0.15);">
+                    <div class="section-title" style="font-size:1.5rem; color:#fde68a; margin-bottom:1rem; text-align:center;">Final Result</div>
+                    <img src='after-photo.jpg' alt='Final Result' class='final-img' style='display:block; max-width:100%; margin:1.5rem auto; border-radius:1rem; box-shadow:0 2px 16px rgba(157,0,255,0.2); border:2px solid #9d00ff;'>
+                    <div class="caption" style="text-align:center; color:#a3a3a3; font-size:1rem; margin-top:0.5rem;">The final result after all the hard work!</div>
+                </div>
+            `;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        window.closeBTSModal = function() {
+            document.getElementById('btsModal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        // Our Photos About Camp Modal
+        function showPhotoGalleryModal() {
+            document.getElementById('photoGalleryModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closePhotoGalleryModal() {
+            document.getElementById('photoGalleryModal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        // Custom Mobile Menu functions
+        function openCustomMobileMenu() {
+            document.getElementById('customMobileMenuModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeCustomMobileMenu() {
+            document.getElementById('customMobileMenuModal').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+        // Prevent menu from closing when clicking inside
+        var menu = document.getElementById('navButtonsMobile');
+        if (menu) {
+            menu.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initVantaBackground();
+            initPortal(); // Initial call to set up portal for home or stop if not home
+            launchConfetti(); // Launch confetti when the page loads
+
+            const cards = document.querySelectorAll('.card');
+            document.addEventListener('mousemove', (e) => {
+                cards.forEach((card) => { // Removed index as it's not used
+                    if (card.closest('.content-section.active')) {
+                        const rect = card.getBoundingClientRect();
+                        const cardX = rect.left + rect.width / 2;
+                        const cardY = rect.top + rect.height / 2;
+
+                        const offsetX = (e.clientX - cardX) * 0.05;
+                        const offsetY = (e.clientY - cardY) * 0.05;
+
+                        card.style.transform = `perspective(1000px) rotateY(${offsetX}deg) rotateX(${-offsetY}deg) translateY(-10px)`;
+                    } else {
+                        card.style.transform = `perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0px)`;
+                    }
+                });
+            });
+
+            document.addEventListener('mouseleave', () => {
+                cards.forEach(card => {
+                    if (card.closest('.content-section.active')) {
+                        card.style.transform = `perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0px)`;
+                    }
+                });
+            });
+
+            // === INTERACTIVE FEATURES ===
+            // Animated Counters
+            function animateCounters() {
+  document.querySelectorAll('.counter').forEach(function(counter) {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-count');
+      const current = +counter.innerText.replace(/\D/g, '') || 0;
+      const increment = Math.ceil(target / 60);
+      if (current < target) {
+        counter.innerText = current + increment > target ? target : current + increment;
+        setTimeout(updateCount, 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCount();
+  });
+}
+            // Run counters when section is visible
+            function handleCounterSection() {
+  const section = document.querySelector('h2.mystic-text + div');
+  if (!section) return;
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        obs.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  observer.observe(section);
+}
+            // Tooltips
+            function createTooltips() {
+  document.querySelectorAll('[data-tooltip]').forEach(el => {
+    el.addEventListener('mouseenter', function(e) {
+      let tip = document.createElement('div');
+      tip.className = 'custom-tooltip';
+      tip.innerText = el.getAttribute('data-tooltip');
+      document.body.appendChild(tip);
+      const rect = el.getBoundingClientRect();
+      tip.style.position = 'fixed';
+      tip.style.left = (rect.left + rect.width/2 - tip.offsetWidth/2) + 'px';
+      tip.style.top = (rect.top - 32) + 'px';
+      tip.style.background = 'rgba(40,0,80,0.95)';
+      tip.style.color = '#fde68a';
+      tip.style.padding = '6px 14px';
+      tip.style.borderRadius = '8px';
+      tip.style.fontSize = '0.95rem';
+      tip.style.zIndex = 9999;
+      el._tooltip = tip;
+    });
+    el.addEventListener('mouseleave', function() {
+      if (el._tooltip) {
+        el._tooltip.remove();
+        el._tooltip = null;
+      }
+    });
+  });
+}
+            // Scroll-based Reveal Animations
+            function revealOnScroll() {
+  const revealEls = document.querySelectorAll('.card, .content-section header, .timeline-item');
+  const revealClass = 'reveal-animate';
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add(revealClass);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => observer.observe(el));
+}
+            // Add reveal animation CSS
+            const revealStyle = document.createElement('style');
+revealStyle.innerHTML = `
+  .reveal-animate { opacity: 1 !important; transform: translateY(0) scale(1) !important; transition: all 0.7s cubic-bezier(.23,1,.32,1); }
+  .card, .content-section header, .timeline-item { opacity: 0; transform: translateY(40px) scale(0.97); }
+`;
+document.head.appendChild(revealStyle);
+            // Confetti on CTA
+            function confettiOnClick() {
+  const confettiBtns = document.querySelectorAll('button, a');
+  confettiBtns.forEach(btn => {
+    if (btn.innerText.match(/Register|Participate/i)) {
+      btn.addEventListener('click', function() {
+        if (window.confetti) {
+          confetti({
+            particleCount: 120,
+            spread: 80,
+            origin: { y: 0.7 },
+            colors: ['#fde68a', '#9d00ff', '#fff', '#c084fc']
+          });
+        }
+      });
+    }
+  });
+}
+            // Floating Orb Interactivity
+            function orbInteractivity() {
+  const orbs = document.querySelectorAll('.orb, .fancy-orb');
+  document.addEventListener('mousemove', e => {
+    orbs.forEach((orb, i) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 2;
+      const y = (e.clientY / window.innerHeight - 0.5) * 2;
+      orb.style.transform = `translate(${x * (30 + i*10)}px, ${y * (20 + i*8)}px)`;
+    });
+  });
+}
+            // Init all interactive features on DOMContentLoaded
+            window.addEventListener('DOMContentLoaded', function() {
+  handleCounterSection();
+  createTooltips();
+  revealOnScroll();
+  confettiOnClick();
+  orbInteractivity();
+});
+        });
+
+        // --- Mobile Hamburger Menu Logic ---
+        function toggleMobileNavMenu() {
+            var menu = document.getElementById('navButtonsMobile');
+            if (menu) menu.classList.toggle('show');
+        }
+        function closeMobileMenu() {
+            var menu = document.getElementById('navButtonsMobile');
+            if (menu) menu.classList.remove('show');
+        }
+        // Hide menu by default on load
+        window.addEventListener('DOMContentLoaded', function() {
+            var menu = document.getElementById('navButtonsMobile');
+            if (menu) menu.classList.remove('show');
+        });
+        // Hide menu when clicking outside
+        window.addEventListener('click', function(e) {
+            var menu = document.getElementById('navButtonsMobile');
+            var btn = document.getElementById('mobileMenuBtn');
+            if (menu && menu.classList.contains('show')) {
+                if (!menu.contains(e.target) && e.target !== btn) {
+                    menu.classList.remove('show');
+                }
+            }
+        });
+        // Prevent menu from closing when clicking inside
+        var menu = document.getElementById('navButtonsMobile');
+        if (menu) {
+            menu.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+    </script>
+
+    <!-- Add BTS Modal HTML at the end of body, just before </body> -->
+    <div id="btsModal" style="display:none;" class="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center">
+        <div class="bg-white rounded-xl shadow-lg p-8 max-w-md w-full text-center relative" style="position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); max-height:90vh; overflow-y:auto;">
+            <button onclick="closeBTSModal()" class="absolute top-2 right-2 text-gray-500 hover:text-purple-700 text-2xl font-bold">&times;</button>
+            <div id="btsModalContent"></div>
+            <button onclick="closeBTSModal()" class="btn-mystic text-white px-6 py-2 rounded-full font-semibold mt-4">Close</button>
+        </div>
+    </div>
+
+    <!-- Puja Modal HTML -->
+    <div id="pujaModal" style="display:none;" class="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center">
+        <div class="bg-white rounded-xl shadow-lg p-8 max-w-md w-full text-center relative" style="position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); max-height:90vh; overflow-y:auto;">
+            <button onclick="closePujaModal()" class="absolute top-2 right-2 text-gray-500 hover:text-purple-700 text-2xl font-bold">&times;</button>
+            <h2 class="text-2xl font-bold mb-4 text-purple-700">Participate in Puja</h2>
+            <p class="text-lg text-gray-800 mb-4">Come to our camp in Danta starting from 1 September 2025 to 5 September 2025 evening.</p>
+            <button onclick="closePujaModal()" class="btn-mystic text-white px-6 py-2 rounded-full font-semibold mt-2">Close</button>
+        </div>
+    </div>
+<script>
+  window.addEventListener("load", () => {
+    const btn = document.querySelector("#something");
+    if (btn) {
+      btn.addEventListener("click", () => {
+        console.log("Clicked");
+      });
+    }
+  });
+</script>
+<!-- Firebase Auth (v10+) integration -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBcg_KDuRX7pr8_ah4oGmNqa8JTsmYHXGM",
+  authDomain: "jay-ambe-serva-kendra-usa-camp.firebaseapp.com",
+  projectId: "jay-ambe-serva-kendra-usa-camp",
+  storageBucket: "jay-ambe-serva-kendra-usa-camp.appspot.com",
+  messagingSenderId: "60678468849",
+  appId: "1:60678468849:web:0ada18006b3d18e8ef6550",
+  measurementId: "G-VDZ5LFS1P5"
+};
+
+const app = initializeApp(firebaseConfig);
+const Auth = getAuth(app);
+// Auto sign-in as admin if code is present in localStorage
+const ADMIN_EMAIL = "jayambesevausacamp.org@gmail.com";
+const ADMIN_PASSWORD = ""; // <-- Remove hardcoded password for security
+const ADMIN_CODE = "2822990904";
+const ADMIN_UID = "6Xx1maQoqVNw9ElRgDuXa2LxkSE2";
+const correctPassword = "2822990904";
+const enteredPassword = document.getElementById("password").value.trim(); // remove spaces
+
+if (enteredPassword === correctPassword) {
+    // Login success
+} else {
+    alert("Incorrect password");
+}
+
+// If admin code is set, sign in automatically
+if (localStorage.getItem("isAdmin") === "true" && ADMIN_PASSWORD) {
+  signInWithEmailAndPassword(auth, ADMIN_EMAIL, ADMIN_PASSWORD)
+    .then((userCredential) => {
+      if (userCredential.user.uid === ADMIN_UID) {
+        console.log("Signed in as admin ✅", userCredential.user.email);
+        // You can show admin UI here if needed
+      }
+    })
+    .catch((error) => {
+      console.error("Admin login failed", error);
+    });
+}
+
+onAuthStateChanged(auth, (user) => {
+  if (user && user.uid === ADMIN_UID) {
+    console.log("Logged in as admin:", user.email);
+    // Show admin-only features if needed
+  } else {
+    console.log("Not signed in as admin");
+    // Hide admin-only features if needed
+  }
+});
+
+// Example: Improved sign-in error handling
+function signInUser(email, password) {
+  if (!email || !password) {
+    alert("Please enter both email and password.");
+    return;
+  }
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Sign-in success logic here
+    })
+    .catch((error) => {
+      if (error.code === "auth/invalid-credential" || error.code === "auth/wrong-password" || error.code === "auth/user-not-found") {
+        alert("Invalid email or password. Please check your credentials and try again.");
+      } else {
+        alert(error.message);
+      }
+      console.error(error.code, error.message);
+    });
+}
+
+// Password reset function
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+
+const auth = getAuth();
+const actionCodeSettings = {
+  url: "https://jayambesevakendrausacamp.github.io",
+  handleCodeInApp: false
+};
+
+sendPasswordResetEmail(auth, email, actionCodeSettings)
+  .then(() => {
+    alert("Password reset email sent!");
+  })
+  .catch((error) => {
+    console.error(error.code, error.message);
+  });
+
+// Usage: sendFirebasePasswordReset("user@example.com");
+</script>
+<footer class="bg-gradienslsg t-to-r from-purple-900/90 via-gray-900/80 to-yellow-900/70 py-10 border-t border-yellow-300/30 text-center mt-16 text-yellow-200 space-y-6">
+  <!-- Logo & Copyright -->
+  <div class="space-y-1">
+    <p>&copy; 2025 Jay Ambe Seva Kendra USA. All rights reserved.</p>
+    <p class="text-purple-200 text-sm">Since 2000 • Jay Ambe Seva Kendra USA Camp</p>
+  </div>
+
+  <!-- Designed by -->
+  <div class="text-sm">
+    <p>Designed & code with ❤️ by <strong>Abhi's Development Team by laljiNson's</strong></p>
+    <p>Click below to see Abhi's Projects</p>
+    <a href="abhi.html" class="inline-block mt-2 bg-yellow-300 text-purple-900 font-semibold px-5 py-2 rounded-full hover:bg-yellow-400 transition">
+      🔥 Abhi's Development by laljiNson's
+    </a>
+  </div>
+
+  <!-- Social Links: Instagram & YouTube -->
+  <div class="flex justify-center gap-4 mt-4">
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/jay_ambe_seva_kendra_usa_camp" target="_blank" class="inline-flex items-center gap-2 hover:text-yellow-300 transition">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+        <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.25-.88a.88.88 0 1 1 0 1.75.88.88 0 0 1 0-1.75z"/>
+      </svg>
+      Follow us on Instagram
+    </a>
+
+    <!-- YouTube -->
+    <a href="https://youtube.com/@jayambesevakendrausacamp?si=cUm9PwQYLjrzIdtC" target="_blank" class="inline-flex items-center gap-2 hover:text-yellow-300 transition">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+        <path d="M23.498 6.186a2.963 2.963 0 0 0-2.084-2.088C19.621 3.5 12 3.5 12 3.5s-7.621 0-9.414.598a2.963 2.963 0 0 0-2.084 2.088A31.82 31.82 0 0 0 0 12a31.82 31.82 0 0 0 .502 5.814 2.963 2.963 0 0 0 2.084 2.088C4.379 20.5 12 20.5 12 20.5s7.621 0 9.414-.598a2.963 2.963 0 0 0 2.084-2.088A31.82 31.82 0 0 0 24 12a31.82 31.82 0 0 0-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+      Follow us on YouTube
+    </a>
+  </div>
+
+  <!-- Email Support -->
+  <div> 
+    <a href="mailto:jayambesevausacamp.org@gmail.com?subject=Support%20Request" class="inline-block bg-yellow-300 text-purple-900 font-semibold px-5 py-2 rounded-full hover:bg-yellow-400 transition">
+      📧 Need Help? Email Us
+    </a>
+    <p class="mt-2 text-sm text-yellow-100">
+      <span class="underline">jayambesevausacamp.org@gmail.com</span><br>
+      Response time: 1 hour to 5 days<br>
+      Support hours: Monday to Friday
+    12 PM to 5 PM EST and IST  |
+    for more information, please visit our <a href="Aibeingdevelop.html" class="text-yellow-300 underline">Ask LaljiNsons</a>.
+    </p>
+  </div>
+<p class="flex items-center justify-center gap-2 mt-4">
+  <!-- Location Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 text-yellow-300" viewBox="0 0 24 24">
+    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+  </svg>
+  Camp location: Jay Ambe Seva Kendra, Next to Adarsh ​​Residential School, Danta-Ambaji Road, Danta, Dist. Banaskantha
+</p>
+
+</footer>
+
+</body>
+</html>

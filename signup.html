@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up | Jay Ambe Seva Kendra USA Camp</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #2d044d 0%, #111827 60%, #fde68a 100%);
+      min-height: 100vh;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+  <div class="bg-white bg-opacity-80 shadow-2xl rounded-2xl p-14 w-full max-w-lg border border-yellow-200">
+    <div class="flex flex-col items-center mb-4">
+      <img src="https://i.pinimg.com/originals/d4/80/12/d48012e2625f2e0d4df8153020d54eb7.jpg"
+           alt="Ambe Maa"
+           style="width:88px;height:88px;border-radius:50%;border:3px solid #fde68a;box-shadow:0 2px 12px #9d00ff44;object-fit:cover;margin-bottom:14px;">
+    </div>
+    <h2 class="text-4xl font-bold text-purple-800 text-center mb-8 tracking-wide">Jay Ambe Camp Sign Up</h2>
+    <form id="signUpForm" class="space-y-6">
+      <input type="text" id="signup-name" placeholder="Full Name" class="w-full border rounded-lg px-5 py-3 text-lg focus:outline-none focus:ring focus:border-yellow-400" required>
+      <input type="number" id="signup-age" placeholder="Age" min="5" class="w-full border rounded-lg px-5 py-3 text-lg focus:outline-none focus:ring focus:border-yellow-400" required>
+      <input type="email" id="signup-email" placeholder="Email" class="w-full border rounded-lg px-5 py-3 text-lg focus:outline-none focus:ring focus:border-yellow-400" required>
+      <input type="password" id="signup-password" placeholder="Password" class="w-full border rounded-lg px-5 py-3 text-lg focus:outline-none focus:ring focus:border-yellow-400" required>
+      <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-yellow-400 text-white py-3 rounded-lg font-bold text-lg hover:from-yellow-400 hover:to-purple-600 transition">Sign Up</button>
+    </form>
+    <p id="signUpMessage" class="text-base text-center text-red-500 mt-6"></p>
+    <div class="text-center mt-8">
+      <a href="signin.html" class="text-purple-700 hover:underline font-semibold text-lg">← Back to Sign In</a>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBcg_KDuRX7pr8_ah4oGmNqa8JTsmYHXGM",
+      authDomain: "jay-ambe-serva-kendra-usa-camp.firebaseapp.com",
+      projectId: "jay-ambe-serva-kendra-usa-camp",
+      storageBucket: "jay-ambe-serva-kendra-usa-camp.appspot.com",
+      messagingSenderId: "60678468849",
+      appId: "1:60678468849:web:0ada18006b3d18e8ef6550",
+      measurementId: "G-VDZ5LFS1P5"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    const signUpForm = document.getElementById("signUpForm");
+    const signUpMessage = document.getElementById("signUpMessage");
+
+    signUpForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("signup-name").value.trim();
+      const age = document.getElementById("signup-age").value;
+      const email = document.getElementById("signup-email").value.trim();
+      const password = document.getElementById("signup-password").value;
+
+      signUpMessage.textContent = "";
+
+      try {
+        // create user in Firebase Auth
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        // store extra info in Firestore under "users" collection
+        await setDoc(doc(db, "users", user.uid), {
+          name: name,
+          age: age,
+          email: email,
+          createdAt: new Date()
+        });
+
+        signUpMessage.textContent = "Sign up successful! Redirecting...";
+        signUpMessage.classList.remove("text-red-500");
+        signUpMessage.classList.add("text-green-600");
+
+        setTimeout(() => window.location.href = "reviewpage.html", 1200);
+
+      } catch (error) {
+        signUpMessage.textContent = error.message;
+        signUpMessage.classList.remove("text-green-600");
+        signUpMessage.classList.add("text-red-500");
+      }
+    });
+  </script>
+</body>
+</html>

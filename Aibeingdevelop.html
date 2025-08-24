@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LajiNson AI Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        min-height: 100vh;
+        width: 100vw;
+        font-family: 'Poppins', Arial, sans-serif;
+        background: linear-gradient(135deg, #2d044d 0%, #111827 60%, #fde68a 100%);
+        color: #fde68a;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+        padding: 20px;
+    }
+    .container {
+        background: rgba(20,20,40,0.85);
+        padding: 48px 36px;
+        border-radius: 2rem;
+        box-shadow: 0 0 32px #9d00ff55;
+        border: 2px solid #fde68a;
+        max-width: 420px;
+        width: 100%;
+        animation: fadeIn 1.5s cubic-bezier(.23,1,.32,1);
+    }
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 18px;
+        color: #fde68a;
+        font-weight: 900;
+        letter-spacing: 0.03em;
+        text-shadow: 0 2px 12px #9d00ff66, 0 0 2px #fde68a99;
+    }
+    p {
+        font-size: 1.15rem;
+        color: #c084fc;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    strong {
+        color: #fde68a;
+        font-weight: 900;
+    }
+    .dots::after {
+        content: '...';
+        animation: blink 1s infinite;
+    }
+    @keyframes blink {
+        0%, 50%, 100% { opacity: 0; }
+        25%, 75% { opacity: 1; }
+    }
+    button {
+        padding: 12px 24px;
+        border-radius: 8px;
+        border: none;
+        background: #fde68a;
+        color: #111827;
+        font-weight: 700;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: 0.3s;
+    }
+    button:hover {
+        background: #fcd34d;
+    }
+    @media (max-width: 600px) {
+        .container {
+            padding: 28px 10px;
+            max-width: 95vw;
+        }
+        h1 { font-size: 1.3rem; }
+        p { font-size: 1rem; }
+    }
+</style>
+</head>
+<body>
+    <!-- First container -->
+    <div class="container">
+        <h1>AI is being built</h1>
+        <p><strong>LajiNson's Adi&Abhi Development</strong><span class="dots"></span></p>
+    </div>
+
+    <!-- Second container -->
+    <div class="container">
+        <h1>AI is being developed</h1>
+        <p>by LaljiNsons Adi&Abhi Development</p>
+
+        <!-- Play Music Button -->
+        <button id="playMusicBtn">Click Here</button>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="backgroundMusic" loop>
+        <source src="campAI song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+<script>
+const music = document.getElementById('backgroundMusic');
+const btn = document.getElementById('playMusicBtn');
+
+btn.addEventListener('click', () => {
+    music.play();              // Start playing music
+    btn.style.display = 'none'; // Hide button after click
+});
+</script>
+</body>
+</html>

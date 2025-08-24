@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In | Jay Ambe Seva Kendra USA Camp</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #2d044d 0%, #111827 60%, #fde68a 100%);
+      min-height: 100vh;
+    }
+    /* Prevent screenshot (CSS + JS, best effort) */
+    body {
+      -webkit-user-select: none; /* Safari */
+      -moz-user-select: none;    /* Firefox */
+      -ms-user-select: none;     /* Internet Explorer/Edge */
+      user-select: none;         /* Non-prefixed version, currently supported by Chrome, Opera, and Edge */
+      -webkit-touch-callout: none; /* Safari */
+      -webkit-tap-highlight-color: transparent; /* Safari */
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+  <div class="bg-white bg-opacity-80 shadow-2xl rounded-2xl p-8 w-full max-w-md border border-yellow-200">
+    <div class="flex justify-center mb-4">
+      <img src="ambe maaa.jpg" alt="Jay Ambe Logo" class="h-16 w-16 rounded-full border-2 border-yellow-300 shadow-md">
+    </div>
+    <h2 class="text-3xl font-bold text-purple-800 text-center mb-6 tracking-wide">Jay Ambe Camp Sign In</h2>
+    <form id="signInForm" class="space-y-4">
+      <input type="text" id="name" placeholder="Name" class="w-full border rounded px-4 py-2 focus:outline-none focus:ring focus:border-yellow-400" required>
+      <input type="number" id="age" placeholder="Age" min="1" class="w-full border rounded px-4 py-2 focus:outline-none focus:ring focus:border-yellow-400" required>
+      <input type="email" id="email" placeholder="Email" class="w-full border rounded px-4 py-2 focus:outline-none focus:ring focus:border-yellow-400" required>
+      <div class="relative">
+        <input type="password" id="password" placeholder="Password" class="w-full border rounded px-4 py-2 focus:outline-none focus:ring focus:border-yellow-400" required>
+        <button type="button" id="togglePassword" class="absolute right-3 top-2 text-purple-700 text-sm font-bold bg-transparent">Show</button>
+      </div>
+      <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-yellow-400 text-white py-2 rounded font-bold hover:from-yellow-400 hover:to-purple-600 transition">Sign In</button>
+      <div class="text-right mt-2">
+        <a href="#" id="forgotPasswordLink" class="text-sm text-purple-700 hover:underline">Forgot Password?</a>
+      </div>
+    </form>
+    <!-- Password Reset Modal -->
+    <div id="resetModal" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-lg p-6 w-full max-w-sm shadow-lg">
+        <h3 class="text-lg font-bold mb-2 text-purple-800">Set New Password</h3>
+        <input type="email" id="resetEmail" placeholder="Enter your email" class="w-full border rounded px-3 py-2 mb-2 focus:outline-none focus:ring focus:border-yellow-400" required>
+        <input type="password" id="oldPassword" placeholder="Current Password" class="w-full border rounded px-3 py-2 mb-2 focus:outline-none focus:ring focus:border-yellow-400" required>
+        <input type="password" id="newPassword" placeholder="New Password" class="w-full border rounded px-3 py-2 mb-3 focus:outline-none focus:ring focus:border-yellow-400" required>
+        <button id="setNewPasswordBtn" class="w-full bg-yellow-500 text-white py-2 rounded font-bold mb-2">Set New Password</button>
+        <button id="closeResetModal" class="w-full bg-gray-300 text-gray-700 py-2 rounded font-bold">Cancel</button>
+        <p id="resetMsg" class="text-sm mt-2 text-center"></p>
+      </div>
+    </div>
+    <p id="signInMessage" class="text-sm text-center text-red-500 mt-4"></p>
+    <div class="text-center mt-2">
+      <span class="text-gray-700 text-sm">Don't have an account?</span>
+      <a href="signup.html" class="text-purple-700 hover:underline font-semibold ml-1">Sign Up</a>
+    </div>
+    <div class="text-center mt-6">
+      <a href="reviewpage.html" class="text-purple-700 hover:underline font-semibold">← Back to Reviews</a>
+    </div>
+    <!-- Admin Code Sign In -->
+    <div class="text-center mt-6">
+      <input type="password" id="admin-code-input" placeholder="Enter Admin Code"
+        class="border px-3 py-2 rounded text-black mb-2" />
+      <button id="admin-code-btn"
+        class="bg-yellow-600 text-white px-4 py-2 rounded font-semibold ml-2">Sign In as Admin code </button>
+      <p id="admin-error" class="text-red-500 mt-2 hidden">❌ Wrong Code</p>
+    </div>
+  </div>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, updatePassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    const firebaseConfig = {
+      apiKey: "AIzaSyBcg_KDuRX7pr8_ah4oGmNqa8JTsmYHXGM",
+      authDomain: "jay-ambe-serva-kendra-usa-camp.firebaseapp.com",
+      projectId: "jay-ambe-serva-kendra-usa-camp",
+      storageBucket: "jay-ambe-serva-kendra-usa-camp.appspot.com",
+      messagingSenderId: "60678468849",
+      appId: "1:60678468849:web:0ada18006b3d18e8ef6550",
+      measurementId: "G-VDZ5LFS1P5"
+    };
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const signInForm = document.getElementById("signInForm");
+    const signInMessage = document.getElementById("signInMessage");
+    signInForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const age = document.getElementById("age").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      signInMessage.textContent = "";
+
+      // Email validation logic
+      function isFakeEmail(email) {
+        // Basic checks for disposable domains and gibberish
+        const disposableDomains = [
+          "mailinator.com", "tempmail", "10minutemail", "guerrillamail", "yopmail", "fakeinbox", "trashmail"
+        ];
+        const domain = email.split("@")[1] || "";
+        if (
+          !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/) ||
+          disposableDomains.some(d => domain.includes(d)) ||
+          email.length < 8 ||
+          /^[a-z]{1,3}\d{1,3}@/.test(email) // gibberish pattern
+        ) {
+          return true;
+        }
+        return false;
+      }
+
+      if (isFakeEmail(email)) {
+        signInMessage.textContent = "Please use your real email address.";
+        signInMessage.classList.remove("text-green-600");
+        signInMessage.classList.add("text-red-500");
+        // Report fake email via mailto
+        window.location.href = `mailto:jayambesevausacamp.org@gmail.com?subject=Fake%20Email%20Report&body=Fake%20email%20attempted:%20${encodeURIComponent(email)}`;
+        return;
+      }
+
+      if (!name || !age) {
+        signInMessage.textContent = "Please enter your name and age.";
+        signInMessage.classList.remove("text-green-600");
+        signInMessage.classList.add("text-red-500");
+        return;
+      }
+      try {
+        const cred = await signInWithEmailAndPassword(auth, email, password);
+        localStorage.setItem("userName", name);
+        localStorage.setItem("userAge", age);
+        localStorage.setItem("userEmail", email);
+        // Update lastActiveDate in Firestore
+        import("https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js").then(({ getFirestore, doc, updateDoc }) => {
+          const db = getFirestore(app);
+          updateDoc(doc(db, "users", cred.user.uid), { lastActiveDate: Date.now() }).catch(()=>{});
+        });
+        signInMessage.textContent = "Sign in successful!";
+        signInMessage.classList.remove("text-red-500");
+        signInMessage.classList.add("text-green-600");
+        if (canAccessReviewPage()) {
+          setTimeout(() => window.location.href = "reviewpage.html", 1200);
+        }
+      } catch (error) {
+        if (
+          error.code === "auth/invalid-credential" ||
+          error.code === "auth/wrong-password" ||
+          error.code === "auth/user-not-found"
+        ) {
+          signInMessage.textContent = "Invalid email or password. Please try again.";
+        } else {
+          signInMessage.textContent = error.message;
+        }
+        signInMessage.classList.remove("text-green-600");
+        signInMessage.classList.add("text-red-500");
+      }
+    });
+
+    // Forgot Password logic (Set new password)
+    const forgotPasswordLink = document.getElementById("forgotPasswordLink");
+    const resetModal = document.getElementById("resetModal");
+    const setNewPasswordBtn = document.getElementById("setNewPasswordBtn");
+    const closeResetModal = document.getElementById("closeResetModal");
+    const resetEmail = document.getElementById("resetEmail");
+    const oldPassword = document.getElementById("oldPassword");
+    const newPassword = document.getElementById("newPassword");
+    const resetMsg = document.getElementById("resetMsg");
+
+    forgotPasswordLink.onclick = function(e) {
+      e.preventDefault();
+      resetModal.classList.remove("hidden");
+      resetMsg.textContent = "";
+      resetEmail.value = "";
+      oldPassword.value = "";
+      newPassword.value = "";
+    };
+    closeResetModal.onclick = function() {
+      resetModal.classList.add("hidden");
+      resetMsg.textContent = "";
+    };
+    setNewPasswordBtn.onclick = async function() {
+      const email = resetEmail.value.trim();
+      const oldPass = oldPassword.value;
+      const newPass = newPassword.value;
+      resetMsg.textContent = "";
+      if (!email || !oldPass || !newPass) {
+        resetMsg.textContent = "Please fill all fields.";
+        resetMsg.classList.add("text-red-500");
+        return;
+      }
+      try {
+        // Re-authenticate user
+        const userCredential = await signInWithEmailAndPassword(auth, email, oldPass);
+        await updatePassword(userCredential.user, newPass);
+        resetMsg.textContent = "Password updated successfully!";
+        resetMsg.classList.remove("text-red-500");
+        resetMsg.classList.add("text-green-600");
+        setTimeout(() => {
+          resetModal.classList.add("hidden");
+        }, 1200);
+      } catch (err) {
+        resetMsg.textContent = err.message;
+        resetMsg.classList.remove("text-green-600");
+        resetMsg.classList.add("text-red-500");
+      }
+    };
+
+    // Blocked users logic
+    function isBlocked(email) {
+      const blockInfo = JSON.parse(localStorage.getItem("blockedUsers") || "{}");
+      if (blockInfo[email]) {
+        const now = Date.now();
+        if (blockInfo[email].permanent) return true;
+        if (now < blockInfo[email].until) return true;
+        // Unblock after 12 hours
+        delete blockInfo[email];
+        localStorage.setItem("blockedUsers", JSON.stringify(blockInfo));
+      }
+      return false;
+    }
+
+    function blockUser(email, hours = 12, permanent = false) {
+      const blockInfo = JSON.parse(localStorage.getItem("blockedUsers") || "{}");
+      blockInfo[email] = permanent
+        ? { permanent: true }
+        : { until: Date.now() + hours * 60 * 60 * 1000, permanent: false };
+      localStorage.setItem("blockedUsers", JSON.stringify(blockInfo));
+    }
+
+    // Prevent regular users from accessing review page
+    function canAccessReviewPage() {
+      return localStorage.getItem("isAdmin") === "true";
+    }
+
+    // Intercept review page navigation
+    document.querySelectorAll('a[href="reviewpage.html"]').forEach(a => {
+      a.onclick = function(e) {
+        if (!canAccessReviewPage()) {
+          e.preventDefault();
+          alert("Only admin can access the review page.");
+        }
+      };
+    });
+
+    // Admin code sign in logic
+    const ADMIN_CODE = "2822990904";
+    document.getElementById("admin-code-btn").onclick = function() {
+      const entered = document.getElementById("admin-code-input").value;
+      const errorMsg = document.getElementById("admin-error");
+      if (entered === ADMIN_CODE) {
+        errorMsg.classList.add("hidden");
+        localStorage.setItem("isAdmin", "true");
+        document.getElementById("signInMessage").textContent = "Admin sign in successful!";
+        document.getElementById("signInMessage").classList.remove("text-red-500");
+        document.getElementById("signInMessage").classList.add("text-green-600");
+        setTimeout(() => window.location.href = "reviewpage.html", 1200);
+      } else {
+        errorMsg.classList.remove("hidden");
+        document.getElementById("signInMessage").textContent = "";
+      }
+    };
+
+    // Show/Hide password logic
+    document.getElementById("togglePassword").onclick = function() {
+      const pwd = document.getElementById("password");
+      if (pwd.type === "password") {
+        pwd.type = "text";
+        this.textContent = "Hide";
+      } else {
+        pwd.type = "password";
+        this.textContent = "Show";
+      }
+    };
+
+    // Prevent screenshot (CSS + JS, best effort)
+    document.body.style.userSelect = "none";
+    document.body.style.webkitUserSelect = "none";
+    document.body.style.msUserSelect = "none";
+    document.body.style.mozUserSelect = "none";
+    document.body.style.webkitTouchCallout = "none";
+    document.body.style.webkitTapHighlightColor = "transparent";
+    document.body.style.pointerEvents = "auto";
+
+    // Attempt to block screenshot (works on some browsers/devices)
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "PrintScreen") {
+        e.preventDefault();
+        showScreenshotBlock();
+      }
+    });
+    document.addEventListener("keyup", function(e) {
+      if (e.key === "PrintScreen") {
+        e.preventDefault();
+        showScreenshotBlock();
+      }
+    });
+
+    // Attempt to block screenshot on mobile (Android/iOS, best effort)
+    if (window.navigator.userAgent.match(/Android|iPhone|iPad|iPod/i)) {
+      window.addEventListener("visibilitychange", function() {
+        if (document.hidden) {
+          showScreenshotBlock();
+        }
+      });
+    }
+
+    // Overlay black image/message
+    function showScreenshotBlock() {
+      if (!document.getElementById("screenshotBlock")) {
+        const div = document.createElement("div");
+        div.id = "screenshotBlock";
+        div.style.position = "fixed";
+        div.style.top = "0";
+        div.style.left = "0";
+        div.style.width = "100vw";
+        div.style.height = "100vh";
+        div.style.background = "#000";
+        div.style.zIndex = "99999";
+        div.style.display = "flex";
+        div.style.alignItems = "center";
+        div.style.justifyContent = "center";
+        div.innerHTML = `<span style="color:#fde68a;font-size:2rem;font-weight:bold;text-align:center;">Screenshot is not allowed</span>`;
+        document.body.appendChild(div);
+        setTimeout(() => {
+          div.remove();
+        }, 3000);
+      }
+    }
+
+    // --- Review moderation logic (for reviewpage.html, but shown here for reference) ---
+    // Example: When admin replies/likes/blocks, use localStorage to store actions.
+    // When a review is submitted, check for abusive/religious/hateful words:
+    window.moderateReview = function(reviewText, userEmail) {
+      const bannedWords = [
+        "hate", "abuse", "religion", "muslim", "hindu", "christian", "jew", "islam", "temple", "church", "mosque",
+        "idiot", "stupid", "dumb", "kill", "attack", "terror", "racist", "sexist"
+      ];
+      const lower = reviewText.toLowerCase();
+      if (bannedWords.some(word => lower.includes(word))) {
+        blockUser(userEmail, 12, false);
+        alert("Your account is blocked for 12 hours due to inappropriate content.");
+        return false;
+      }
+      return true;
+    };
+
+    // Admin can block user permanently:
+    window.adminBlockUser = function(email) {
+      blockUser(email, 0, true);
+      alert("User blocked permanently.");
+    };
+
+    // Admin can see all user emails (for demo, show in console):
+    window.showAllUserEmails = function() {
+      // In real app, fetch from backend
+      const emails = [localStorage.getItem("userEmail")];
+      console.log("User emails:", emails);
+    };
+
+    // Admin can like/reply to reviews (implement in reviewpage.html)
+    // Reusable Firebase forgot password function
+    /**
+     * Sends a Firebase password reset email.
+     * @param {string} email - The user's email address.
+     */
+    function sendFirebasePasswordReset(email) {
+      const auth = getAuth();
+      const actionCodeSettings = {
+        url: "http://127.0.0.1:5500/jay ambe seva wehbsite.html",
+        handleCodeInApp: false
+      };
+      sendPasswordResetEmail(auth, email, actionCodeSettings)
+        .then(() => {
+          alert("Password reset email sent!");
+        })
+        .catch((error) => {
+          console.error(error.code, error.message);
+          alert(error.message);
+        });
+    }
+
+    // Usage example:
+    // sendFirebasePasswordReset("user@example.com");
+  </script>
+</body>
+</html>

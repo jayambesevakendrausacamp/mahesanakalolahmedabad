@@ -10,21 +10,21 @@
 
   <!-- About Us section (in main site) -->
   <url>
-    <loc>https://jayambesevakendrausacamp.github.io/mahesanakalolahmedabad/jay%20ambe%20seva%20wehbsite.html#about-section</loc>
+    <loc>https://jayambesevakendrausacamp.github.io/mahesanakalolahmedabad/index.html#about-section</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Our Services section (in main site) -->
   <url>
-    <loc>https://jayambesevakendrausacamp.github.io/mahesanakalolahmedabad/jay%20ambe%20seva%20wehbsite.html#services-section</loc>
+    <loc>https://jayambesevakendrausacamp.github.io/mahesanakalolahmedabad/index.html#services-section</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Our Photos section (in main site) -->
   <url>
-    <loc>https://jayambesevakendrausacamp.github.io/mahesanakalolahmedabad/jay%20ambe%20seva%20wehbsite.html#bts-section</loc>
+    <loc>https://jayambesevakendrausacamp.github.io/mahesanakalolahmedabad/index.html#bts-section</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -79,3 +79,4 @@
   </url>
 
 </urlset>
+

@@ -2086,15 +2086,16 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
+
+const firebaseConfig = {
   apiKey: "AIzaSyBcg_KDuRX7pr8_ah4oGmNqa8JTsmYHXGM",
-  authDomain: "jay-ambe-serva-kendra-usa-camp.firebaseapp.com",
-  projectId: "jay-ambe-serva-kendra-usa-camp",
-  storageBucket: "jay-ambe-serva-kendra-usa-camp.appspot.com",
+      authDomain: "jay-ambe-serva-kendra-usa-camp.firebaseapp.com",
+      projectId: "jay-ambe-serva-kendra-usa-camp",
+      storageBucket: "jay-ambe-serva-kendra-usa-camp.appspot.com",
   messagingSenderId: "60678468849",
   appId: "1:60678468849:web:0ada18006b3d18e8ef6550",
   measurementId: "G-VDZ5LFS1P5"
 };
-
 const app = initializeApp(firebaseConfig);
 const Auth = getAuth(app);
 // Auto sign-in as admin if code is present in localStorage

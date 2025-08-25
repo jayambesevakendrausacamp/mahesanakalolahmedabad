@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home page -->
+  <url>
+    <loc>https://jayambesevakendrausacamp.github.io/mahesanakalolahmedabad/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About Us section (in main site) -->
+  <url>
+    <loc>https://jayambesevakendrausacamp.github.io/mahesanakalolahmedabad/jay%20ambe%20seva%20wehbsite.html#about-section</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Our Services section (in main site) -->
+  <url>
+    <loc>https://jayambesevakendrausacamp.github.io/mahesanakalolahmedabad/jay%20ambe%20seva%20wehbsite.html#services-section</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Our Photos section (in main site) -->
+  <url>
+    <loc>https://jayambesevakendrausacamp.github.io/mahesanakalolahmedabad/jay%20ambe%20seva%20wehbsite.html#bts-section</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Our Garba Performance page -->
+  <url>
+    <loc>https://jayambesevakendrausacamp.github.io/mahesanakalolahmedabad/our-garba-performance.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sign In page -->
+  <url>
+    <loc>https://jayambesevakendrausacamp.github.io/mahesanakalolahmedabad/signin.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Sign Up page -->
+  <url>
+    <loc>https://jayambesevakendrausacamp.github.io/mahesanakalolahmedabad/signup.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Review Page -->
+  <url>
+    <loc>https://jayambesevakendrausacamp.github.io/mahesanakalolahmedabad/reviewpage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Index page -->
+  <url>
+    <loc>https://jayambesevakendrausacamp.github.io/mahesanakalolahmedabad/index.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Abhi page -->
+  <url>
+    <loc>https://jayambesevakendrausacamp.github.io/mahesanakalolahmedabad/abhi.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Aibeingdevelop page -->
+  <url>
+    <loc>https://jayambesevakendrausacamp.github.io/mahesanakalolahmedabad/Aibeingdevelop.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

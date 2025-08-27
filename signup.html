@@ -40,15 +40,15 @@
     import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
     import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyBcg_KDuRX7pr8_ah4oGmNqa8JTsmYHXGM",
-      authDomain: "jay-ambe-serva-kendra-usa-camp.firebaseapp.com",
-      projectId: "jay-ambe-serva-kendra-usa-camp",
-      storageBucket: "jay-ambe-serva-kendra-usa-camp.appspot.com",
-      messagingSenderId: "60678468849",
-      appId: "1:60678468849:web:0ada18006b3d18e8ef6550",
-      measurementId: "G-VDZ5LFS1P5"
-    };
+const firebaseConfig = {
+  apiKey: "AIzaSyBcg_KDuRX7pr8_ah4oGmNqa8JTsmYHXGM",
+  authDomain: "jay-ambe-serva-kendra-usa-camp.firebaseapp.com",
+  projectId: "jay-ambe-serva-kendra-usa-camp",
+  storageBucket: "jay-ambe-serva-kendra-usa-camp.firebasestorage.app",
+  messagingSenderId: "60678468849",
+  appId: "1:60678468849:web:0ada18006b3d18e8ef6550",
+  measurementId: "G-VDZ5LFS1P5"
+};
 
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
